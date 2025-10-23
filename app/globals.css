@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme inline {
   --color-primary: #0d3251;
@@ -7,7 +7,7 @@
   --color-secondary-light: #cbbeb4;
   --color-background: #f8f8f8;
 
-  --font-cairo: 'Cairo', sans-serif;
+  --font-cairo: "Cairo", sans-serif;
 }
 
 /* Color Utilities */
@@ -42,11 +42,11 @@
 
 /* Button Utilities */
 @utility btn-primary {
-  @apply text-cta rounded-xl bg-primary text-background cursor-pointer p-4 hover:bg-primary-light transition;
+  @apply text-cta bg-primary text-background hover:bg-primary-light cursor-pointer rounded-xl p-4 transition;
 }
 
 @utility btn-secondary {
-  @apply text-cta rounded-xl bg-transparent text-background  cursor-pointer p-4 border border-secondary-light hover:bg-secondary-light hover:text-primary transition;
+  @apply text-cta text-background border-secondary-light hover:bg-secondary-light hover:text-primary cursor-pointer rounded-xl border bg-transparent p-4 transition;
 }
 
 body {
