@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-primary: #0d3251;
+  --color-primary-light: #1f4e6d;
+  --color-secondary: #9b8579;
+  --color-secondary-light: #cbbeb4;
+  --color-background: #f8f8f8;
+
+  --font-cairo: 'Cairo', sans-serif;
+}
+
+/* Color Utilities */
+@utility gradient-bg-inside {
+  @apply bg-linear-to-r from-[#0D3251] to-[#1A4D73];
+}
+
+/* Text Utilities */
+@utility text-hero {
+  @apply font-cairo text-[60px] font-bold;
+}
+@utility text-heading {
+  @apply font-cairo text-[40px] font-semibold;
+}
+@utility text-sub-heading {
+  @apply font-cairo text-[28px] font-semibold;
+}
+
+@utility text-body-small {
+  @apply font-cairo text-[16px] font-normal;
+}
+@utility text-body-regular {
+  @apply font-cairo text-[18px] font-normal;
+}
+@utility text-body-large {
+  @apply font-cairo text-[20px] font-normal;
+}
+
+@utility text-cta {
+  @apply font-cairo text-[18px] font-bold;
+}
+
+body {
+  background: white;
+  color: var(--foreground);
+  font-family: Cairo, sans-serif;
+}
