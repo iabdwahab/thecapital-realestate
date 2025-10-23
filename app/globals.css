@@ -40,6 +40,15 @@
   @apply font-cairo text-[18px] font-bold;
 }
 
+/* Button Utilities */
+@utility btn-primary {
+  @apply text-cta rounded-xl bg-primary text-background cursor-pointer p-4 hover:bg-primary-light transition;
+}
+
+@utility btn-secondary {
+  @apply text-cta rounded-xl bg-transparent text-background  cursor-pointer p-4 border border-secondary-light hover:bg-secondary-light hover:text-primary transition;
+}
+
 body {
   background: white;
   color: var(--foreground);
