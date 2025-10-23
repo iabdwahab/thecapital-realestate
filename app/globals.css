@@ -10,6 +10,7 @@
   --font-cairo: "Cairo", sans-serif;
 
   --spacing-section-y-padding: 64px;
+  --radius-card-radius: 20px;
 }
 
 @utility container {
