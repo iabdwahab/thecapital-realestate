@@ -8,6 +8,12 @@
   --color-background: #f8f8f8;
 
   --font-cairo: "Cairo", sans-serif;
+
+  --spacing-section-y-padding: 64px;
+}
+
+@utility container {
+  @apply mx-auto max-w-[1200px] px-4;
 }
 
 /* Color Utilities */
