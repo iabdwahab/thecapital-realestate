@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function SummarySection() {
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <div className="relative grid gap-6 lg:grid-cols-2">
       <div>
         <SectionTitleDescription
           title="نبذة عن الشركة"
@@ -27,15 +27,17 @@ export default function SummarySection() {
         </button>
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-end">
         <Image
           src="/home_page/summary-hero.png"
           alt="Summary Values Image"
           width={600}
           height={700}
-          className="object-cover"
+          className="f-fit object-cover"
         />
       </div>
+
+      <span className="absolute bottom-0 left-0 h-1/2 w-full translate-y-2/3 bg-[#D0D8DF] blur-2xl lg:w-1/2 lg:translate-y-1/2"></span>
     </div>
   );
 }

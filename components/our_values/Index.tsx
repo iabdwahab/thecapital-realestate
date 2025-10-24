@@ -3,7 +3,7 @@ import ValueCard from "./ValueCard";
 
 export default function OurValues() {
   return (
-    <section>
+    <section className="z-10">
       <SectionTitleDescription
         title="قيمنا"
         description="أن نكـون الـرواد في تطويـر الشـقق الفندقيـة والفلـل السـكنية الذكيـة في المملكـة، ونُقـدم تجربـة سـكنية تجمـع بيـن الراحة، الفخامة، واالسـتثمار المسـتدام."
