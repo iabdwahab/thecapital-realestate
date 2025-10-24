@@ -19,7 +19,7 @@
 
 /* Color Utilities */
 @utility gradient-bg-inside {
-  @apply bg-linear-to-br from-[#5D819B] to-[#1A4D73];
+  @apply bg-linear-to-br from-[#0D3251] to-[#17476C];
 }
 
 @utility gradient-card-hover-light {
@@ -57,11 +57,11 @@
 
 /* Button Utilities */
 @utility btn-primary {
-  @apply text-cta bg-primary text-background hover:bg-primary-light cursor-pointer rounded-xl p-4 transition;
+  @apply text-cta bg-primary text-background hover:bg-primary-light max-lg:active:bg-primary-light cursor-pointer rounded-xl p-4 transition;
 }
 
 @utility btn-secondary {
-  @apply text-cta text-background border-secondary-light hover:bg-secondary-light hover:text-primary cursor-pointer rounded-xl border bg-transparent p-4 transition;
+  @apply text-cta text-background border-secondary-light hover:bg-secondary-light hover:text-primary max-lg:active:bg-secondary-light max-lg:active:text-primary cursor-pointer rounded-xl border bg-transparent p-4 transition;
 }
 
 /* Images Utitlities */

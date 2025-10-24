@@ -15,6 +15,7 @@ export default function OurServicesSection() {
         <ServiceCardIconText />
         <ServiceCardIconText />
         <ServiceCardIconText />
+        <ServiceCardIconText />
       </div>
     </section>
   );
