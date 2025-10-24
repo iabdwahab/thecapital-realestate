@@ -19,7 +19,15 @@
 
 /* Color Utilities */
 @utility gradient-bg-inside {
-  @apply bg-linear-to-r from-[#0D3251] to-[#1A4D73];
+  @apply bg-linear-to-br from-[#0D3251] to-[#1A4D73];
+}
+
+@utility gradient-card-hover-light {
+  @apply from-primary-light bg-linear-to-br via-[#F8F8F8] via-55% to-[#F8F8F8];
+}
+
+@utility gradient-card-light-border {
+  @apply from-primary-light bg-linear-to-l via-[#F8F8F8] via-55% to-[#F8F8F8];
 }
 
 /* Text Utilities */
@@ -54,6 +62,11 @@
 
 @utility btn-secondary {
   @apply text-cta text-background border-secondary-light hover:bg-secondary-light hover:text-primary cursor-pointer rounded-xl border bg-transparent p-4 transition;
+}
+
+/* Images Utitlities */
+@utility white-svg {
+  @apply brightness-0 invert;
 }
 
 body {
