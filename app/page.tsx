@@ -2,6 +2,7 @@ import HeroSection from "@/components/home_page/HeroSection";
 import OurPojectsSection from "@/components/home_page/OurPojectsSection";
 import OurServicesSection from "@/components/home_page/OurServicesSection";
 import SummaryValuesSection from "@/components/home_page/summary_valeus_section/SummaryValuesSection";
+import WhyUsSection from "@/components/home_page/WhyUsSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <SummaryValuesSection />
       <OurServicesSection />
       <OurPojectsSection />
+      <WhyUsSection />
     </>
   );
 }
