@@ -23,7 +23,7 @@
 }
 
 @utility gradient-card-hover-light {
-  @apply via-background bg-linear-to-br from-[#5D819B] to-[#F8F8F8] to-55%;
+  @apply via-background bg-linear-to-br from-[#A5B2BD] to-[#F8F8F8];
 }
 
 @utility gradient-card-light-border {
