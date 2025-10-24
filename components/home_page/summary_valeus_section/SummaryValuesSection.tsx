@@ -4,7 +4,7 @@ import ValuesSection from "./ValuesSection";
 
 export default function SummaryValuesSection() {
   return (
-    <section className="py-section-y-padding from-primary-light via-primary-light/25 to-background relative overflow-hidden bg-linear-to-br">
+    <section className="py-section-y-padding via-background to-background relative overflow-hidden bg-linear-to-br from-[#5D819B]">
       <div className="container">
         <SummarySection />
         {/* <ValuesSection /> */}

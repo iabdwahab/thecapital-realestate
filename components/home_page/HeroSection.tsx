@@ -10,7 +10,7 @@ export default function HeroSection() {
       <p className="text-body-regular md:text-sub-heading mb-6">
         نمنحك تجربة استثمارية آمنة ومتميزة تحقق طموحاتك.
       </p>
-      <button className="btn-secondary min-h-[58px] min-w-[270px]">استكشف حلولنا</button>
+      <button className="btn-secondary text-cta min-h-[58px] min-w-[270px]">استكشف حلولنا</button>
     </main>
   );
 }

@@ -19,11 +19,11 @@
 
 /* Color Utilities */
 @utility gradient-bg-inside {
-  @apply bg-linear-to-br from-[#0D3251] to-[#1A4D73];
+  @apply bg-linear-to-br from-[#5D819B] to-[#1A4D73];
 }
 
 @utility gradient-card-hover-light {
-  @apply from-primary-light bg-linear-to-br via-[#F8F8F8] via-55% to-[#F8F8F8];
+  @apply via-background bg-linear-to-br from-[#5D819B] to-[#F8F8F8] to-55%;
 }
 
 @utility gradient-card-light-border {
