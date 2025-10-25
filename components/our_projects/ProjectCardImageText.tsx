@@ -1,8 +1,15 @@
 import Image from "next/image";
 
-export default function ProjectCardImageText() {
+interface Props {
+  className?: string;
+}
+
+export default function ProjectCardImageText({ className }: Props) {
   return (
-    <div tabIndex={0} className="group rounded-card-radius max-h-[350px] overflow-hidden shadow-sm">
+    <div
+      tabIndex={0}
+      className={`${className} group rounded-card-radius max-h-[350px] overflow-hidden shadow-sm`}
+    >
       <div className="relative h-[350px] max-h-[350px] w-full bg-black transition-all duration-400 group-hover:max-h-[65%] max-lg:group-focus:max-h-[65%]">
         <Image
           src="/services/product.png"
