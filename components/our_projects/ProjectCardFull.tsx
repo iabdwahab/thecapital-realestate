@@ -8,7 +8,9 @@ export default function ProjectCardFull() {
       tabIndex={0}
       className="rounded-card-radius group bg-background duration-hover-normal relative z-10 shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
     >
+      {/* This will be visible when hovering */}
       <GradientCardBorder />
+
       <div className="rounded-t-card-radius relative overflow-hidden">
         <Image
           src="/services/product.png"
