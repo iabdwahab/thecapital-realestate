@@ -1,3 +1,4 @@
+import ButtonPrimaryArrow from "@/components/global/ButtonPrimaryArrow";
 import SectionTitleDescription from "@/components/global/SectionTitleDescription";
 import Image from "next/image";
 
@@ -13,18 +14,7 @@ export default function SummarySection() {
             نحــن نؤمــن أن العقــار ليـس مجـرد أصـل ثابـت،بــل هــو أداة اســتراتيجية لبنــاء الثــروة وتحقيــق الاســتدامة المـــــــــالية،لذلــك قمنـــــا بتصميــم منتجــــــــات اســتثماريــــة تراعـــــــي احتياجــــــــات الأفـــــــــــراد وتضمــــــن لهــم تجربــة اســتثمارية ثرية ومتميزة تنســجم حلولنــــــــا مــع تطلعــــــــات الســـــــوق وتـــــواكب مســتهدفات رؤيــــــــــــة المملكــــــــة 2030 في دعــم اقتصــاد متنوع ومستدام."
         />
 
-        <button className="btn-primary flex items-center gap-2">
-          <span>اقرأ المزيد</span>
-          <span>
-            <Image
-              src="/icons/arrow-up.svg"
-              alt="Arrow Icon"
-              width={20}
-              height={20}
-              className="-rotate-90"
-            />
-          </span>
-        </button>
+        <ButtonPrimaryArrow />
       </div>
 
       <div className="flex justify-end">
