@@ -4,7 +4,10 @@ import GradientCardBorder from "../global/GradientCardBorder";
 
 export default function ProjectCardFull() {
   return (
-    <article className="rounded-card-radius group bg-background duration-hover-normal relative z-10 shadow-sm transition hover:-translate-y-2.5">
+    <article
+      tabIndex={0}
+      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
+    >
       <GradientCardBorder />
       <div className="rounded-t-card-radius relative overflow-hidden">
         <Image
@@ -12,13 +15,13 @@ export default function ProjectCardFull() {
           alt="Project Image"
           width={400}
           height={256}
-          className="duration-hover-normal h-64 w-full object-cover transition group-hover:scale-125"
+          className="duration-hover-normal h-64 w-full object-cover transition group-hover:scale-125 max-lg:group-focus:scale-125"
         />
 
         <span className="absolute top-0 left-0 z-10 h-full w-full -bg-linear-30 from-[#546E8380] to-[#0D325180]"></span>
       </div>
 
-      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
+      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
         <h3 className="text-primary text-body-large mb-2"> برج النفق السكني</h3>
         <div className="text-primary-light flex items-center gap-3">
           <Image src="/icons/location.svg" alt="Icon" width={20} height={20} />
