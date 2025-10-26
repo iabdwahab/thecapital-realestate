@@ -2,9 +2,11 @@ import { ServiceFetchedObject } from "@/types/services";
 
 export async function getServices() {
   try {
-    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/services`);
+    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/services`);
 
     const reasonsArray: ServiceFetchedObject[] = await reasonsRes.json();
+
+    console.log(reasonsArray);
 
     return reasonsArray.map((reason) => ({
       id: reason.id,
