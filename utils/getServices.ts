@@ -1,0 +1,17 @@
+import { ServiceFetchedObject } from "@/types/services";
+
+export async function getServices() {
+  try {
+    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/services`);
+
+    const reasonsArray: ServiceFetchedObject[] = await reasonsRes.json();
+
+    return reasonsArray.map((reason) => ({
+      id: reason.id,
+      ...reason.acf,
+    }));
+  } catch (error) {
+    console.error("Error fetching section heading:", error);
+    return [];
+  }
+}

@@ -8,8 +8,6 @@ export default async function WhyUsSection() {
   const sectionHeadingData: SectionHeadingData | null = await getSectionHeading("why_us");
   const whyUsReasons = await getWhyUsReasons();
 
-  console.log(whyUsReasons);
-
   return (
     <section className="py-section-y-padding bg-[url('/services/background-shape.png')] bg-cover">
       <div className="container">
