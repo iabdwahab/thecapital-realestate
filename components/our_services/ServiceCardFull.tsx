@@ -24,6 +24,16 @@ export default function ServiceCardFull({ data }: { data: ServiceData }) {
         />
 
         <span className="absolute top-0 left-0 z-10 h-full w-full -bg-linear-30 from-[#546E8380] to-[#0D325180]"></span>
+
+        <span className="absolute right-3 bottom-3 z-20 rounded-xl bg-[#CBBEB480] p-3">
+          <Image
+            src={icon || "/icons/home-tree.svg"}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="white-svg"
+          />
+        </span>
       </div>
 
       <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
