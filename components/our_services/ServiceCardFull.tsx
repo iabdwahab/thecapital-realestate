@@ -1,8 +1,11 @@
 import Image from "next/image";
 import GradientCardBorder from "../global/GradientCardBorder";
 import ButtonPrimaryArrow from "../global/ButtonPrimaryArrow";
+import { ServiceData } from "@/types/services";
 
-export default function ServiceCardFull() {
+export default function ServiceCardFull({ data }: { data: ServiceData }) {
+  const { icon, title, description, image } = data;
+
   return (
     <article
       tabIndex={0}
@@ -13,7 +16,7 @@ export default function ServiceCardFull() {
 
       <div className="rounded-t-card-radius relative overflow-hidden">
         <Image
-          src="/services/product.png"
+          src={image ? image : "/services/product.png"}
           alt="Service Image"
           width={400}
           height={500}
@@ -24,11 +27,8 @@ export default function ServiceCardFull() {
       </div>
 
       <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
-        <h3 className="text-body-large text-primary mb-2">إدارة وتسويق الأصول</h3>
-        <p className="text-body-small text-primary-light mb-3">
-          تقديــم خدمــات إدارة وتســويق احترافيــة للوحــدات الفندقيــة والمشــاريع الســكنية.
-          وأيضًا تعزيــــــز القيــــــــمة الســوقية عبــر حلـــــول تســويقية ذكية ومبتكرة.
-        </p>
+        <h3 className="text-body-large text-primary mb-2">{title}</h3>
+        <p className="text-body-small text-primary-light mb-3">{description}</p>
 
         <ButtonPrimaryArrow text="اطلب الخدمة الآن" className="w-full p-3" />
       </div>
