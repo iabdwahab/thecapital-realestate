@@ -25,6 +25,7 @@ export default function ServiceCardFull({ data }: { data: ServiceData }) {
 
         <span className="absolute top-0 left-0 z-10 h-full w-full -bg-linear-30 from-[#546E8380] to-[#0D325180]"></span>
 
+        {/* This is icons square that showed on the top of the image */}
         <span className="absolute right-3 bottom-3 z-20 rounded-xl bg-[#CBBEB480] p-3">
           <Image
             src={icon || "/icons/home-tree.svg"}

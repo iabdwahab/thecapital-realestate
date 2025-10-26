@@ -20,7 +20,24 @@ export default function ProjectCardFull() {
           className="duration-hover-normal h-64 w-full object-cover transition group-hover:scale-125 max-lg:group-focus:scale-125"
         />
 
+        {/* This is the overlay over the image */}
         <span className="absolute top-0 left-0 z-10 h-full w-full -bg-linear-30 from-[#546E8380] to-[#0D325180]"></span>
+
+        {/* This is the status of the project */}
+        <span className="bg-primary text-body-small text-background absolute top-3 right-3 z-20 rounded-xl p-3">
+          مكتمل
+        </span>
+
+        {/* This is icons square that showed on the top of the image */}
+        <span className="absolute top-3 left-3 z-20 rounded-xl bg-[#CBBEB480] p-3">
+          <Image
+            src={"/icons/home-tree.svg"}
+            alt="Icon"
+            width={20}
+            height={20}
+            className="white-svg"
+          />
+        </span>
       </div>
 
       <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
