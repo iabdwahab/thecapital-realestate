@@ -28,7 +28,9 @@ export default function ServiceCardFull({ data }: { data: ServiceData }) {
 
       <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
         <h3 className="text-body-large text-primary mb-2">{title}</h3>
-        <p className="text-body-small text-primary-light mb-3">{description}</p>
+        <p className="text-body-small text-primary-light">{description}</p>
+
+        <hr className="border-secondary-light my-5" />
 
         <ButtonPrimaryArrow text="اطلب الخدمة الآن" className="w-full p-3" />
       </div>
