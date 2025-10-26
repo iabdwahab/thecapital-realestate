@@ -2,12 +2,13 @@ import Image from "next/image";
 
 interface Props {
   className?: string;
+  text: string;
 }
 
-export default function ButtonPrimaryArrow({ className }: Props) {
+export default function ButtonPrimaryArrow({ className, text }: Props) {
   return (
     <button className={`${className} btn-primary flex items-center justify-center gap-2`}>
-      <span>استثمر الآن</span>
+      <span>{text}</span>
       <span>
         <Image
           src="/icons/arrow-up.svg"

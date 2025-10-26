@@ -46,7 +46,7 @@ export default function ProjectCardFull() {
           </div>
         </div>
 
-        <ButtonPrimaryArrow className="w-full" />
+        <ButtonPrimaryArrow text="استثمر الآن" className="w-full" />
       </div>
     </article>
   );
