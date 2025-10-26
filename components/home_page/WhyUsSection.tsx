@@ -1,16 +1,14 @@
 import { getSectionHeading } from "@/utils/getSectionHeading";
 import SectionTitleDescription from "../global/SectionTitleDescription";
 import WhyUsCard from "../why_us/WhyUsCard";
-
-interface SectionHeadingData {
-  id: number;
-  slug: string;
-  title: string;
-  description: string;
-}
+import { SectionHeadingData } from "@/types/sectionHeading";
+import { getWhyUsReasons } from "@/utils/getWhyUsReasons";
 
 export default async function WhyUsSection() {
   const sectionHeadingData: SectionHeadingData | null = await getSectionHeading("why_us");
+  const whyUsReasons = await getWhyUsReasons();
+
+  console.log(whyUsReasons);
 
   return (
     <section className="py-section-y-padding bg-[url('/services/background-shape.png')] bg-cover">
@@ -24,11 +22,13 @@ export default async function WhyUsSection() {
         />
 
         <div className="flex flex-wrap justify-center gap-4">
-          <WhyUsCard className="w-full md:w-[calc((100%/2)-16px)] lg:w-[calc((100%/3)-16px)]" />
-          <WhyUsCard className="w-full md:w-[calc((100%/2)-16px)] lg:w-[calc((100%/3)-16px)]" />
-          <WhyUsCard className="w-full md:w-[calc((100%/2)-16px)] lg:w-[calc((100%/3)-16px)]" />
-          <WhyUsCard className="w-full md:w-[calc((100%/2)-16px)] lg:w-[calc((100%/3)-16px)]" />
-          <WhyUsCard className="w-full md:w-[calc((100%/2)-16px)] lg:w-[calc((100%/3)-16px)]" />
+          {whyUsReasons.map((reason) => (
+            <WhyUsCard
+              data={reason}
+              key={reason.id}
+              className="w-full md:w-[calc((100%/2)-16px)] lg:w-[calc((100%/3)-16px)]"
+            />
+          ))}
         </div>
       </div>
     </section>

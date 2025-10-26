@@ -1,11 +1,4 @@
-interface SectionHeadingData {
-  id: number;
-  slug: string;
-  acf: {
-    title: string;
-    description: string;
-  };
-}
+import { SectionHeadingFetchedObject } from "@/types/sectionHeading";
 
 export async function getSectionHeading(section_slug: string) {
   try {
@@ -13,7 +6,7 @@ export async function getSectionHeading(section_slug: string) {
       `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/sections?slug=${section_slug}&_fields=id,slug,acf`,
     );
 
-    const sectionHeadingArray: SectionHeadingData[] = await sectionHeadingRes.json();
+    const sectionHeadingArray: SectionHeadingFetchedObject[] = await sectionHeadingRes.json();
 
     if (!sectionHeadingArray || sectionHeadingArray.length === 0) {
       return null;

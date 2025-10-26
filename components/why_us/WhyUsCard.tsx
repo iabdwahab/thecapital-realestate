@@ -1,11 +1,15 @@
+import { WhyUsReasonData } from "@/types/whyUs";
 import GradientCardBorder from "../global/GradientCardBorder";
 import IconGradientCard from "../global/IconGradientCard";
 
 interface Props {
   className?: string;
+  data: WhyUsReasonData;
 }
 
-export default function WhyUsCard({ className }: Props) {
+export default function WhyUsCard({ className, data }: Props) {
+  const { id, title, description, icon } = data;
+
   return (
     <div
       tabIndex={0}
@@ -13,13 +17,11 @@ export default function WhyUsCard({ className }: Props) {
     >
       <GradientCardBorder />
       <div>
-        <IconGradientCard />
+        <IconGradientCard icon={icon} />
       </div>
       <div>
-        <h3 className="text-body-large text-primary mb-2">إدارة متكاملة</h3>
-        <p className="text-body-small text-primary-light">
-          مــن التخطيــــــــط والتطويــــــــــــر حتى إدارة الأصول وتحقيق العوائد.
-        </p>
+        <h3 className="text-body-large text-primary mb-2">{title}</h3>
+        <p className="text-body-small text-primary-light">{description}</p>
       </div>
     </div>
   );
