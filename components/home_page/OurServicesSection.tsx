@@ -21,9 +21,7 @@ export default async function OurServicesSection() {
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {servicesList.map((service) => {
-            return (
-              <ServiceCardIconText key={service.id} icon={service.icon} title={service.title} />
-            );
+            return <ServiceCardIconText key={service.id} data={service} />;
           })}
         </div>
       </div>

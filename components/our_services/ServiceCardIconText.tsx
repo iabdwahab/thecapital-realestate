@@ -1,12 +1,10 @@
 import Image from "next/image";
 import GradientCardBorder from "../global/GradientCardBorder";
+import { ServiceData } from "@/types/services";
 
-interface Props {
-  icon: string | false;
-  title: string;
-}
+export default function ServiceCardIconText({ data }: { data: ServiceData }) {
+  const { icon, title, description } = data;
 
-export default function ServiceCardIconText({ icon, title }: Props) {
   return (
     <div
       tabIndex={0}
@@ -23,6 +21,7 @@ export default function ServiceCardIconText({ icon, title }: Props) {
         />
       </div>
       <h3 className="text-body-large text-primary">{title}</h3>
+      <p className="text-primary-light text-body-small text-center">{description}</p>
     </div>
   );
 }
