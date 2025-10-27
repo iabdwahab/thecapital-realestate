@@ -40,7 +40,7 @@ export default function HeaderNav() {
   ];
 
   return (
-    <nav className="hidden xl:block">
+    <nav className="hidden lg:block">
       <ul className="flex items-center gap-6">
         {navLinks.map((link) => (
           <li key={link.id}>

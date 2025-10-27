@@ -3,7 +3,7 @@ import HeaderNav from "./HeaderNav";
 
 export default function Header() {
   return (
-    <header className="bg-background/20 text-body-regular text-background border-secondary-light absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-[35px] py-5 lg:px-[70px]">
+    <header className="bg-background/20 text-body-regular text-background border-secondary-light absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-[35px] py-5 lg:px-[30px]">
       <div className="flex items-center gap-3">
         <button className="lg:hidden">
           <svg
@@ -26,7 +26,7 @@ export default function Header() {
           alt="Logo"
           width={150}
           height={50}
-          className="hidden object-contain lg:block"
+          className="-mt-1.5 hidden object-contain lg:block"
         />
         <Image
           src="/logo-ar-60-20.png"
