@@ -13,7 +13,7 @@ export default function PageIntroSection({ title, description }: Props) {
           <Image src="/logo-aren.png" alt="The Capital Logo" width={206} height={52} />
         </div>
         <h1 className="text-sub-heading md:text-hero mb-2">{title}</h1>
-        <p className="text-body-regular md:text-sub-heading mb-6">{description}</p>
+        <p className="text-body-regular md:text-sub-heading mb-6 max-w-[800px]">{description}</p>
         {/* <button className="btn-secondary text-cta min-h-[58px] min-w-[270px]">استكشف حلولنا</button> */}
       </div>
     </main>
