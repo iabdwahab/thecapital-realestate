@@ -1,10 +1,11 @@
 import Image from "next/image";
+import HeaderNav from "./HeaderNav";
 
 export default function Header() {
   return (
-    <header className="bg-background/20 text-background border-secondary-light absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-[35px] py-5">
+    <header className="bg-background/20 text-body-regular text-background border-secondary-light absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-[35px] py-5 lg:px-[70px]">
       <div className="flex items-center gap-3">
-        <button>
+        <button className="lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -20,8 +21,25 @@ export default function Header() {
             />
           </svg>
         </button>
-        <Image src="/logo-ar.png" alt="Logo" width={60} height={30} className="object-contain" />
+        <Image
+          src="/logo-ar-150-50.png"
+          alt="Logo"
+          width={150}
+          height={50}
+          className="hidden object-contain lg:block"
+        />
+        <Image
+          src="/logo-ar-60-20.png"
+          alt="Logo"
+          width={60}
+          height={20}
+          className="object-contain lg:hidden"
+        />
       </div>
+
+      <HeaderNav />
+
+      <button className="btn-primary hidden p-3 xl:block">ابدأ استثمارك</button>
 
       <div className="flex items-center gap-3">
         <button>
