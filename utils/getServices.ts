@@ -6,8 +6,6 @@ export async function getServices() {
 
     const reasonsArray: ServiceFetchedObject[] = await reasonsRes.json();
 
-    console.log(reasonsArray);
-
     return reasonsArray.map((reason) => ({
       id: reason.id,
       ...reason.acf,
