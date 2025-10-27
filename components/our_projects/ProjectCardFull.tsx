@@ -1,8 +1,11 @@
 import Image from "next/image";
 import ButtonPrimaryArrow from "../global/ButtonPrimaryArrow";
 import GradientCardBorder from "../global/GradientCardBorder";
+import { ProjectData } from "@/types/projects";
 
-export default function ProjectCardFull() {
+export default function ProjectCardFull({ data }: { data: ProjectData }) {
+  const { title, description, image, location, icon, status, area, units } = data;
+
   return (
     <article
       tabIndex={0}
@@ -13,7 +16,7 @@ export default function ProjectCardFull() {
 
       <div className="rounded-t-card-radius relative overflow-hidden">
         <Image
-          src="/services/product.png"
+          src={image || "/services/product.png"}
           alt="Project Image"
           width={400}
           height={256}
@@ -25,13 +28,13 @@ export default function ProjectCardFull() {
 
         {/* This is the status of the project */}
         <span className="bg-primary text-body-small text-background absolute top-3 right-3 z-20 rounded-xl p-3">
-          مكتمل
+          {status}
         </span>
 
         {/* This is icons square that showed on the top of the image */}
         <span className="absolute top-3 left-3 z-20 rounded-xl bg-[#CBBEB480] p-3">
           <Image
-            src={"/icons/home-tree.svg"}
+            src={icon || "/icons/home-tree.svg"}
             alt="Icon"
             width={20}
             height={20}
@@ -41,25 +44,23 @@ export default function ProjectCardFull() {
       </div>
 
       <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
-        <h3 className="text-primary text-body-large mb-2"> برج النفق السكني</h3>
+        <h3 className="text-primary text-body-large mb-2"> {title}</h3>
         <div className="text-primary-light flex items-center gap-3">
           <Image src="/icons/location.svg" alt="Icon" width={20} height={20} />
-          <span className="text-body-small mb-1 line-clamp-1">جدة، الكورنيش.</span>
+          <span className="text-body-small mb-1 line-clamp-1">{location}</span>
         </div>
-        <p className="text-primary-light text-body-regular">
-          برج تجاري متعدد الاستخدامات يضم مكاتب إدارية ومساحات تجارية
-        </p>
+        <p className="text-primary-light text-body-regular">{description} </p>
 
         <hr className="bg-secondary-light my-3 h-[0.5px] w-full border-none" />
 
         <div className="grid grid-cols-2 gap-1 py-3">
           <div>
             <h4 className="text-primary-light text-body-small">الوحدات</h4>
-            <p className="text-primary text-body-regular">450 وحدة</p>
+            <p className="text-primary text-body-regular">{units}</p>
           </div>
           <div>
             <h4 className="text-primary-light text-body-small">المساحة</h4>
-            <p className="text-primary text-body-regular">95,000 م²</p>
+            <p className="text-primary text-body-regular">{Number(area).toLocaleString()} م²</p>
           </div>
         </div>
 
