@@ -5,8 +5,6 @@ import { getPageHeading } from "@/utils/getPageHeading";
 export default async function page() {
   const pageHeading = await getPageHeading("services");
 
-  console.log(pageHeading);
-
   return (
     <>
       <PageIntroSection
