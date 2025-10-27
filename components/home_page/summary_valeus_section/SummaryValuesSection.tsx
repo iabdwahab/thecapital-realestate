@@ -1,6 +1,5 @@
 import OurValues from "@/components/our_values/Index";
 import SummarySection from "./SummarySection";
-import ValuesSection from "./ValuesSection";
 
 export default function SummaryValuesSection() {
   return (
