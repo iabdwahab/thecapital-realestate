@@ -1,8 +1,10 @@
 import Image from "next/image";
+import BackgroundVideo from "./BackgroundVideo";
 
 export default function HeroSection() {
   return (
-    <main className="text-background relative flex min-h-screen flex-col items-center justify-center bg-[#363636ef] text-center">
+    <main className="text-background relative flex min-h-screen flex-col items-center justify-center bg-[#00000070] text-center">
+      <BackgroundVideo />
       <div>
         <Image src="/logo-aren.png" alt="The Capital Logo" width={206} height={52} />
       </div>
