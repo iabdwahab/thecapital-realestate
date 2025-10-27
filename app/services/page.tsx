@@ -11,7 +11,7 @@ export default async function page() {
         title={pageHeading?.title || "خدماتنا"}
         description={
           pageHeading?.description ||
-          "نقدم مجموعة شاملة من الخدمات العقارية المتكاملة لتلبية جميع احتياجاتكم."
+          "نقدّم منظومة متكاملة من الخدمات للمستثمر في القطاع الفندقي، تشمل جميع المراحل من الفكرة إلى العائد"
         }
       />
       <OurServicesSection />

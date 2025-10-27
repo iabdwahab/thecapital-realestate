@@ -6,8 +6,6 @@ export async function getValues() {
 
     const reasonsArray: ValueFetchedObject[] = await reasonsRes.json();
 
-    console.log(reasonsArray);
-
     return reasonsArray.map((reason) => ({
       id: reason.id,
       ...reason.acf,

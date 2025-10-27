@@ -10,7 +10,7 @@ export default function HeaderNav() {
     {
       id: 1,
       text: "عن ذا كابيتال",
-      href: "#",
+      href: "/about",
     },
     {
       id: 2,
@@ -25,17 +25,17 @@ export default function HeaderNav() {
     {
       id: 4,
       text: "أخبارنا",
-      href: "#",
+      href: "/news",
     },
     {
       id: 5,
       text: "الشركاء والمستثمرون",
-      href: "#",
+      href: "/partners",
     },
     {
       id: 6,
       text: "تواصل معنا",
-      href: "#",
+      href: "/contact",
     },
   ];
 
