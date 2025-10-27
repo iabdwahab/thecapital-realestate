@@ -81,7 +81,6 @@
 }
 
 body {
-  background: white;
-  color: var(--foreground);
+  background: #f8f8f8;
   font-family: Cairo, sans-serif;
 }

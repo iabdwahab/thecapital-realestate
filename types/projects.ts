@@ -8,7 +8,7 @@ export interface ProjectFetchedObject {
     location: string;
     units: string;
     area: string;
-    type: "residential" | "commercial";
+    type: "سكني" | "تجاري";
     status: string;
   };
 }
@@ -22,6 +22,6 @@ export interface ProjectData {
   location: string;
   units: string;
   area: string;
-  type: "residential" | "commercial";
+  type: "سكني" | "تجاري";
   status: string;
 }
