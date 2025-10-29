@@ -10,13 +10,13 @@ dayjs.extend(customParseFormat);
 dayjs.locale(ar);
 
 export function formatDateToArabic(dateString: string): string {
-  const date = dayjs(dateString, "YYYY-MM-DD-HH-mm");
+  const date = dayjs(dateString);
 
   return dayjs(date).format("D MMMM YYYY");
 }
 
 export function timeFromNowInArabic(dateString: string): string {
-  const date = dayjs(dateString, "YYYY-MM-DD-HH-mm");
+  const date = dayjs(dateString);
 
   return dayjs(date).fromNow();
 }
