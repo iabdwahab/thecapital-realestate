@@ -1,12 +1,16 @@
 import { SectionHeadingData } from "@/types/pageHeading";
 import { getSectionHeading } from "@/utils/getSectionHeading";
 import Link from "next/link";
+import BlurryCirlce from "../global/BlurryCirlce";
 
 export default async function StartInvestmentSection() {
   const sectionHeadingData: SectionHeadingData | null = await getSectionHeading("start_investment");
 
   return (
-    <section className="py-section-y-padding bg-primary text-background text-center">
+    <section className="py-section-y-padding bg-primary text-background relative z-10 overflow-hidden text-center">
+      <BlurryCirlce className="top-0 left-0 -translate-y-1/2" />
+      <BlurryCirlce className="right-0 translate-y-1/2" />
+
       <div className="container">
         <div className="mb-12">
           <h2 className="text-heading mb-3">
