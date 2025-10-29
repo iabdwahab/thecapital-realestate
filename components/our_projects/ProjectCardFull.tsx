@@ -53,7 +53,7 @@ export default function ProjectCardFull({ data }: { data: ProjectData }) {
 
         <hr className="bg-secondary-light my-3 h-[0.5px] w-full border-none" />
 
-        <div className="grid grid-cols-2 gap-1 py-3">
+        <div className="mb-1 grid grid-cols-2 gap-1 py-3">
           <div>
             <h4 className="text-primary-light text-body-small">الوحدات</h4>
             <p className="text-primary text-body-regular">{units}</p>

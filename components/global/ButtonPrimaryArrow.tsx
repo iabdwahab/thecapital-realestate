@@ -4,13 +4,13 @@ import Link from "next/link";
 interface Props {
   className?: string;
   text: string;
-  href: string;
+  href?: string;
 }
 
 export default function ButtonPrimaryArrow({ className, text, href }: Props) {
   return (
     <Link
-      href={href}
+      href={href || "#"}
       className={`${className} btn-primary flex w-fit items-center justify-center gap-2`}
     >
       <span>{text}</span>

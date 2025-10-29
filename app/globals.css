@@ -57,11 +57,11 @@
 
 /* Button Utilities */
 @utility btn-primary {
-  @apply text-cta bg-primary text-background hover:bg-primary-light max-lg:active:bg-primary-light cursor-pointer rounded-xl p-4 transition;
+  @apply text-cta bg-primary text-background hover:bg-primary-light max-lg:active:bg-primary-light cursor-pointer rounded-xl px-4 py-3 transition;
 }
 
 @utility btn-secondary {
-  @apply text-cta text-background border-secondary-light hover:bg-secondary-light hover:text-primary max-lg:active:bg-secondary-light max-lg:active:text-primary cursor-pointer rounded-xl border bg-transparent p-4 transition;
+  @apply text-cta text-background border-secondary-light hover:bg-secondary-light hover:text-primary max-lg:active:bg-secondary-light max-lg:active:text-primary cursor-pointer rounded-xl border bg-transparent px-4 py-3 transition;
 }
 
 /* Images Utitlities */
