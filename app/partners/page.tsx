@@ -1,4 +1,5 @@
 import PageIntroSection from "@/components/global/PageIntroSection";
+import PartnersSection from "@/components/partners_page/PartnersSection";
 import { getPageHeading } from "@/utils/getPageHeading";
 
 export default async function Partners() {
@@ -13,6 +14,8 @@ export default async function Partners() {
           "ننمو معاً نحو النجاح - انضم إلى شبكتنا من الشركاء والمستثمرين لتحقيق أهدافك الاستثمارية"
         }
       />
+
+      <PartnersSection />
     </>
   );
 }
