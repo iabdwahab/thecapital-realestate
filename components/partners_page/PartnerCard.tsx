@@ -1,7 +1,10 @@
 import Image from "next/image";
 import GradientCardBorder from "../global/GradientCardBorder";
+import { PartnerData } from "@/types/partners";
 
-export default function PartnerCard() {
+export default function PartnerCard({ data }: { data: PartnerData }) {
+  const { icon, name, partnership_field } = data;
+
   return (
     <article
       tabIndex={0}
@@ -10,10 +13,10 @@ export default function PartnerCard() {
       <GradientCardBorder />
 
       <div className="group-hover:bg-primary max-lg:group-focus:bg-primary duration-hover-normal rounded-card-radius p-3 transition">
-        <Image src="/icons/bank.png" alt="Icon" width={50} height={50} className="" />
+        <Image src={icon || "/icons/bank.png"} alt="Icon" width={50} height={50} className="" />
       </div>
-      <h3 className="text-body-large text-primary">البنك الوطني</h3>
-      <p className="text-body-small text-primary-light">التمويل</p>
+      <h3 className="text-body-large text-primary">{name}</h3>
+      <p className="text-body-small text-primary-light">{partnership_field}</p>
     </article>
   );
 }
