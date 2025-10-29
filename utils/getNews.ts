@@ -2,7 +2,9 @@ import { NewsFetchedObject } from "@/types/news";
 
 export async function getNews() {
   try {
-    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/news`);
+    const reasonsRes = await fetch(
+      `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/news?_fields=id,acf,date`,
+    );
 
     const reasonsArray: NewsFetchedObject[] = await reasonsRes.json();
 

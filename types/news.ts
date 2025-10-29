@@ -1,10 +1,10 @@
 export interface NewsFetchedObject {
   id: number;
+  date: string;
   acf: {
     image: string | false;
     title: string;
     short_description: string;
-    date: string;
   };
 }
 
