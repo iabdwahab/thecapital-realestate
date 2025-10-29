@@ -9,8 +9,11 @@ export default async function InquirySection() {
   return (
     <section className="py-section-y-padding container">
       <SectionTitleDescription
-        title={sectionHeadingData?.title || ""}
-        description={sectionHeadingData?.description || ""}
+        title={sectionHeadingData?.title || "هل لديك استفسار؟"}
+        description={
+          sectionHeadingData?.description ||
+          "تواصل مع فريقنا للحصول على مزيد من المعلومات حول فرص الشراكة والاستثمار"
+        }
       />
 
       <div className="flex items-center justify-center gap-3">
