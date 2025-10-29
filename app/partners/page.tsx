@@ -1,5 +1,6 @@
 import PageIntroSection from "@/components/global/PageIntroSection";
 import PartnersSection from "@/components/partners_page/PartnersSection";
+import PartnersSectionCTACard from "@/components/partners_page/PartnersSectionCTACard";
 import { getPageHeading } from "@/utils/getPageHeading";
 
 export default async function Partners() {
