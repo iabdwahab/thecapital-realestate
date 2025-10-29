@@ -43,7 +43,7 @@ export default async function LinksSide({ contactInfo }: Props) {
   ];
 
   return (
-    <div className="grid gap-4 md:grid-cols-3">
+    <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-4">
       <div>
         <h3 className="text-sub-heading text-background mb-6">روابط سريعة</h3>
         <ul className="text-body-small flex flex-col gap-3 text-[#CCD1D2]">
