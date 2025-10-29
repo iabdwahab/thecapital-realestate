@@ -1,6 +1,22 @@
+import { SocialMediaAccount } from "@/types/footerInfo";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function InfoSide() {
+interface Props {
+  socialMediaAccounts: Record<string, SocialMediaAccount> | undefined;
+}
+
+export default function InfoSide({ socialMediaAccounts }: Props) {
+  // Filter founded accounts
+  let socialMediaAccountsList: SocialMediaAccount[] = [];
+
+  if (socialMediaAccounts) {
+    const values = Object.values(socialMediaAccounts);
+
+    socialMediaAccountsList = values.filter((account) => account.logo && account.href);
+  }
+  ////////////////
+
   return (
     <div className="flex flex-col gap-8 lg:max-w-[420px]">
       <div className="">
@@ -16,6 +32,26 @@ export default function InfoSide() {
         شركة رائدة في مجال التطوير العقاري والاستثمار، نقدم حلولاً عقارية متكاملة تلبي تطلعاتكم
         وتساهم في تطوير القطاع العقاري.
       </h4>
+
+      <ul className="flex items-center gap-3 max-lg:justify-center">
+        {socialMediaAccountsList.map((account, index) => {
+          return (
+            <li key={index}>
+              <Link
+                href={account.href}
+                className="flex rounded-full bg-[#F8F8F81A] p-3 transition duration-150 hover:bg-[#f8f8f828]"
+              >
+                <Image
+                  src={account.logo || "/logos/facebook.png"}
+                  alt="Social Media Logo"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
