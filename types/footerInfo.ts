@@ -7,6 +7,7 @@ export interface FooterInfoFetchedObject {
       email: string;
     };
     social_media: Record<string, SocialMediaAccount>;
+    info_side: FooterInfoSide;
   };
 }
 
@@ -25,4 +26,9 @@ export interface FooterContactInfo {
 export interface SocialMediaAccount {
   logo: string | false;
   href: string;
+}
+
+export interface FooterInfoSide {
+  logo: string | false;
+  description: string;
 }
