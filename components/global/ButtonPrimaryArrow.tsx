@@ -1,13 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   className?: string;
   text: string;
+  href: string;
 }
 
-export default function ButtonPrimaryArrow({ className, text }: Props) {
+export default function ButtonPrimaryArrow({ className, text, href }: Props) {
   return (
-    <button className={`${className} btn-primary flex items-center justify-center gap-2`}>
+    <Link
+      href={href}
+      className={`${className} btn-primary flex w-fit items-center justify-center gap-2`}
+    >
       <span>{text}</span>
       <span>
         <Image
@@ -18,6 +23,6 @@ export default function ButtonPrimaryArrow({ className, text }: Props) {
           className="-rotate-90"
         />
       </span>
-    </button>
+    </Link>
   );
 }

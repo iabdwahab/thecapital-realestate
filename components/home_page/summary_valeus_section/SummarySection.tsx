@@ -1,29 +1,34 @@
 import ButtonPrimaryArrow from "@/components/global/ButtonPrimaryArrow";
-import SectionTitleDescription from "@/components/global/SectionTitleDescription";
+import { getSummarySectionData } from "@/utils/getSummarySectionData";
 import Image from "next/image";
 
-export default function SummarySection() {
-  return (
-    <div className="relative grid gap-6 lg:grid-cols-2">
-      <div>
-        <SectionTitleDescription
-          title="نبذة عن الشركة"
-          description="تأسســت ذا كابيتـــــــــالبرؤيـة طموحـة تهدف إلى إعــادة تعريــف مفهــوم
-            الاســتثمار العقــاري عبــر تقديـم نمـاذج ومنتجات استثمـــــــارية مبتكــــــرة وموثوقــة
-            تمنــح الأفــراد والمستثمريــــــــن فرصًـا عمليـة وآمنـة للدخـول في القطــاع العقـــــاري.
-            نحــن نؤمــن أن العقــار ليـس مجـرد أصـل ثابـت،بــل هــو أداة اســتراتيجية لبنــاء الثــروة وتحقيــق الاســتدامة المـــــــــالية،لذلــك قمنـــــا بتصميــم منتجــــــــات اســتثماريــــة تراعـــــــي احتياجــــــــات الأفـــــــــــراد وتضمــــــن لهــم تجربــة اســتثمارية ثرية ومتميزة تنســجم حلولنــــــــا مــع تطلعــــــــات الســـــــوق وتـــــواكب مســتهدفات رؤيــــــــــــة المملكــــــــة 2030 في دعــم اقتصــاد متنوع ومستدام."
-        />
+export default async function SummarySection() {
+  const fetchedData = await getSummarySectionData();
 
-        <ButtonPrimaryArrow text="استثمر الآن" />
+  return (
+    <div className="relative grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <div>
+        <h2 className="text-sub-heading lg:text-heading text-primary mb-3">
+          {fetchedData?.title || "نبذة عن الشركة"}
+        </h2>
+        <div
+          className="text-body-small lg:text-body-large text-primary-light mb-8 flex flex-col gap-1 text-justify opacity-80"
+          dangerouslySetInnerHTML={{ __html: fetchedData?.description || "" }}
+        ></div>
+
+        <ButtonPrimaryArrow
+          text={fetchedData?.section_button.text || "اقرأ المزيد"}
+          href={fetchedData?.section_button.href || "/about"}
+        />
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex justify-end lg:justify-center">
         <Image
-          src="/home_page/summary-hero.png"
+          src={fetchedData?.image || "/home_page/summary-hero.png"}
           alt="Summary Values Image"
-          width={600}
-          height={700}
-          className="f-fit object-cover"
+          width={380}
+          height={680}
+          className="object-cover"
         />
       </div>
 
