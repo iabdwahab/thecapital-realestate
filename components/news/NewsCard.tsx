@@ -1,22 +1,29 @@
 import Image from "next/image";
 import GradientCardBorder from "../global/GradientCardBorder";
+import { NewsData } from "@/types/news";
 
-export default function NewsCard() {
+interface Props {
+  data: NewsData;
+}
+
+export default function NewsCard({ data }: Props) {
+  const { image, title, short_description, date } = data;
+
   return (
     <article
       tabIndex={0}
       className="rounded-card-radius group bg-background duration-hover-normal relative z-10 shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
     >
-      {/* This will be visible when hovering */}
+      {/* This will be vWisible when hovering */}
       <GradientCardBorder />
 
       <div className="rounded-t-card-radius relative overflow-hidden">
         <Image
-          src={"/services/product.png"}
+          src={image || "/placeholders/news.jpg"}
           alt="Project Image"
           width={400}
           height={256}
-          className="duration-hover-normal h-64 w-full object-cover transition group-hover:scale-125 max-lg:group-focus:scale-125"
+          className="duration-hover-normal block h-64 w-full object-cover transition group-hover:scale-125 max-lg:group-focus:scale-125"
         />
 
         {/* This is the overlay over the image */}
@@ -24,17 +31,13 @@ export default function NewsCard() {
 
         {/* This is the status of the project */}
         <span className="bg-primary text-body-small text-background absolute top-3 right-3 z-20 rounded-xl p-3">
-          فعاليات{" "}
+          فعاليات
         </span>
       </div>
 
       <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
-        <h3 className="text-primary text-body-large mb-2">
-          توقيع اتفاقية شراكة استراتيجية مع البنك الأهلي
-        </h3>
-        <p className="text-primary-light text-body-regular">
-          شراكة استراتيجية لتوفير حلول تمويلية ميسرة لعملائنا
-        </p>
+        <h3 className="text-primary text-body-large mb-2">{title} </h3>
+        <p className="text-primary-light text-body-regular">{short_description}</p>
 
         <hr className="bg-secondary-light my-3 h-[0.5px] w-full border-none" />
 
