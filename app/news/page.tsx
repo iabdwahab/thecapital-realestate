@@ -1,5 +1,6 @@
 import PageIntroSection from "@/components/global/PageIntroSection";
 import NewsCard from "@/components/news/NewsCard";
+import NewsletterSubscribtionSection from "@/components/newsletter/NewsletterSubscribtionSection";
 import { getPageHeading } from "@/utils/getPageHeading";
 
 export default async function News() {
@@ -22,6 +23,7 @@ export default async function News() {
           <NewsCard />
         </div>
       </section>
+      <NewsletterSubscribtionSection />
     </>
   );
 }
