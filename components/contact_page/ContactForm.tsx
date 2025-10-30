@@ -15,7 +15,7 @@ export default function ContactForm() {
           name="name"
           id="name"
           placeholder="أدخل اسمك بالكامل"
-          className="text-primary-light text-body-small border-primary rounded-xl border p-3"
+          className="text-primary-light outline-primary-light text-body-small border-primary rounded-xl border p-3"
         />
       </div>
 
@@ -28,7 +28,7 @@ export default function ContactForm() {
           name="email"
           id="email"
           placeholder="أدخل بريدك الإلكتروني"
-          className="text-primary-light text-body-small border-primary rounded-xl border p-3"
+          className="text-primary-light text-body-small outline-primary-light border-primary rounded-xl border p-3"
         />
       </div>
 
@@ -41,7 +41,7 @@ export default function ContactForm() {
           name="phone"
           id="phone"
           placeholder="أدخل رقم الهاتف الخاص بك "
-          className="text-primary-light text-body-small border-primary rounded-xl border p-3"
+          className="text-primary-light text-body-small outline-primary-light border-primary rounded-xl border p-3"
         />
       </div>
 
@@ -54,7 +54,7 @@ export default function ContactForm() {
           id="message"
           rows={5}
           placeholder="أدخل ما تريد إرساله لنا"
-          className="text-primary-light text-body-small border-primary rounded-xl border p-3"
+          className="text-primary-light text-body-small outline-primary-light border-primary rounded-xl border p-3"
         />
       </div>
 

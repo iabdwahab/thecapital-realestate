@@ -17,7 +17,11 @@ export default async function Contact() {
       <div className="py-section-y-padding container">
         <ContactInfoCardsContainer data={Object.values(contactPageInfo?.contact_info || {})} />
 
-        <ContactForm />
+        <hr className="my-section-y-padding bg-secondary-light h-px w-full border-none" />
+
+        <div className="grid gap-20 lg:grid-cols-2">
+          <ContactForm />
+        </div>
       </div>
     </>
   );
