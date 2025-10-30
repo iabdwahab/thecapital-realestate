@@ -1,8 +1,11 @@
 import Image from "next/image";
 import HeaderNav from "./HeaderNav";
 import Link from "next/link";
+import { getHeaderInfo } from "@/utils/getHeaderInfo";
 
-export default function Header() {
+export default async function Header() {
+  const headerInfo = await getHeaderInfo();
+
   return (
     <header className="bg-background/20 text-body-regular text-background border-secondary-light header-breakpoint:px-[30px] absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-5 py-5">
       <div className="flex items-center gap-3">
@@ -31,7 +34,7 @@ export default function Header() {
         />
       </div>
 
-      <HeaderNav />
+      <HeaderNav navLinks={Object.values(headerInfo?.nav_links || [])} />
 
       <button className="btn-primary hidden p-3 xl:block">ابدأ استثمارك</button>
 
