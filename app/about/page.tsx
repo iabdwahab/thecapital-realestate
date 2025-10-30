@@ -1,3 +1,4 @@
+import OurStorySection from "@/components/about_page/OurStorySection";
 import PageIntroSection from "@/components/global/PageIntroSection";
 import OurValues from "@/components/our_values/Index";
 import { getPageHeading } from "@/utils/getPageHeading";
@@ -15,6 +16,7 @@ export default async function About() {
       />
 
       <div className="py-section-y-padding container">
+        <OurStorySection />
         <OurValues />
       </div>
     </>
