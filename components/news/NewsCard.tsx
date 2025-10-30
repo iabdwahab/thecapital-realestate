@@ -13,7 +13,7 @@ export default function NewsCard({ data }: Props) {
   return (
     <article
       tabIndex={0}
-      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
+      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 flex h-full flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
     >
       {/* This will be vWisible when hovering */}
       <GradientCardBorder />
@@ -36,13 +36,15 @@ export default function NewsCard({ data }: Props) {
         </span>
       </div>
 
-      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
-        <h3 className="text-primary text-body-large mb-2">{title} </h3>
-        <p className="text-primary-light text-body-regular">{short_description}</p>
+      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius flex flex-1 flex-col px-3 pt-3 pb-6 transition">
+        <div className="mb-3">
+          <h3 className="text-primary text-body-large mb-2">{title} </h3>
+          <p className="text-primary-light text-body-regular">{short_description}</p>
+        </div>
 
-        <hr className="bg-secondary-light my-3 h-[0.5px] w-full border-none" />
+        <hr className="bg-secondary-light mt-auto mb-3 h-[0.5px] w-full border-none" />
 
-        <div className="text-body-small text-primary-light mt-4 flex items-center justify-between gap-3 px-2">
+        <div className="text-body-small text-primary-light flex items-center justify-between gap-3 px-2">
           <div className="flex items-center gap-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
