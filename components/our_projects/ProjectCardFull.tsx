@@ -9,7 +9,7 @@ export default function ProjectCardFull({ data }: { data: ProjectData }) {
   return (
     <article
       tabIndex={0}
-      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
+      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 flex h-full flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
     >
       {/* This will be visible when hovering */}
       <GradientCardBorder />
@@ -43,15 +43,15 @@ export default function ProjectCardFull({ data }: { data: ProjectData }) {
         </span>
       </div>
 
-      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
+      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius flex flex-1 flex-col px-3 pt-3 pb-6 transition">
         <h3 className="text-primary text-body-large mb-2"> {title}</h3>
         <div className="text-primary-light flex items-center gap-3">
           <Image src="/icons/location.svg" alt="Icon" width={20} height={20} />
           <span className="text-body-small mb-1 line-clamp-1">{location}</span>
         </div>
-        <p className="text-primary-light text-body-regular">{description} </p>
+        <p className="text-primary-light text-body-regular mb-3">{description} </p>
 
-        <hr className="bg-secondary-light my-3 h-[0.5px] w-full border-none" />
+        <hr className="bg-secondary-light mt-auto mb-3 h-[0.5px] w-full border-none" />
 
         <div className="mb-1 grid grid-cols-2 gap-1 py-3">
           <div>
