@@ -9,13 +9,7 @@ export default async function Projects() {
 
   return (
     <>
-      <PageIntroSection
-        title={pageHeading?.title || "مشاريعنا"}
-        description={
-          pageHeading?.description ||
-          "نفخر بمحفظتنا المتنوعة من المشاريع العقارية التي تجمع بين الجودة والابتكار."
-        }
-      />
+      <PageIntroSection data={pageHeading} />
       <section className="pb-section-y-padding container">
         <ProjectsFilteration allProjects={projectsList} />
       </section>

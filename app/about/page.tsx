@@ -11,12 +11,7 @@ export default async function About() {
 
   return (
     <>
-      <PageIntroSection
-        title={pageHeading?.title || "عن ذا كابيتال"}
-        description={
-          pageHeading?.description || "رواد في مجال التطوير الاستثمار العقاري في المنتجات الفندقية"
-        }
-      />
+      <PageIntroSection data={pageHeading} />
 
       <div className="py-section-y-padding from-background bg-linear-to-b from-45% via-[#E1DAD5] via-80% to-[#e9e5e2]">
         <div className="container">

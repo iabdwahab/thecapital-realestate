@@ -7,13 +7,7 @@ export default async function page() {
 
   return (
     <>
-      <PageIntroSection
-        title={pageHeading?.title || "خدماتنا"}
-        description={
-          pageHeading?.description ||
-          "نقدّم منظومة متكاملة من الخدمات للمستثمر في القطاع الفندقي، تشمل جميع المراحل من الفكرة إلى العائد"
-        }
-      />
+      <PageIntroSection data={pageHeading} />
       <OurServicesSection />
     </>
   );

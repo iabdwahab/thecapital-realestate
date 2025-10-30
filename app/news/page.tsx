@@ -9,10 +9,7 @@ export default async function News() {
 
   return (
     <>
-      <PageIntroSection
-        title={pageHeading?.title || "أخبارنا"}
-        description={pageHeading?.description || "تابع آخر أخبارنا وتحديثاتنا ومشاريعنا الجديدة"}
-      />
+      <PageIntroSection data={pageHeading} />
 
       <NewsSection />
       <NewsletterSubscribtionSection />

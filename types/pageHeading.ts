@@ -4,6 +4,7 @@ export interface PageHeadingFetchedObject {
   acf: {
     title: string;
     description: string;
+    slogan?: string;
   };
 }
 
@@ -12,4 +13,5 @@ export interface SectionHeadingData {
   slug: string;
   title: string;
   description: string;
+  slogan?: string;
 }

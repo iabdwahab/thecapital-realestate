@@ -8,13 +8,7 @@ export default async function Partners() {
 
   return (
     <>
-      <PageIntroSection
-        title={pageHeading?.title || "الشركاء والمستثمرون"}
-        description={
-          pageHeading?.description ||
-          "ننمو معاً نحو النجاح - انضم إلى شبكتنا من الشركاء والمستثمرين لتحقيق أهدافك الاستثمارية"
-        }
-      />
+      <PageIntroSection data={pageHeading} />
 
       <PartnersSection />
       <InquirySection />
