@@ -17,7 +17,7 @@ export async function getPageHeading(page_slug: string) {
     const {
       id,
       slug,
-      acf: { title, description },
+      acf: { title, description, slogan },
     } = pageHeadingData;
 
     return {
@@ -25,6 +25,7 @@ export async function getPageHeading(page_slug: string) {
       slug,
       title,
       description,
+      slogan,
     };
   } catch (error) {
     console.error("Error fetching page heading:", error);
