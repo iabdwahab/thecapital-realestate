@@ -1,4 +1,5 @@
 import PageIntroSection from "@/components/global/PageIntroSection";
+import OurValues from "@/components/our_values/Index";
 import { getPageHeading } from "@/utils/getPageHeading";
 
 export default async function About() {
@@ -12,6 +13,10 @@ export default async function About() {
           pageHeading?.description || "رواد في مجال التطوير الاستثمار العقاري في المنتجات الفندقية"
         }
       />
+
+      <div className="py-section-y-padding container">
+        <OurValues />
+      </div>
     </>
   );
 }
