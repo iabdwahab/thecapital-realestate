@@ -13,21 +13,23 @@ export default async function PartnersSection() {
   const partnersCTAData = await getPartnersCTAData();
 
   return (
-    <section className="py-section-y-padding container">
-      <SectionTitleDescription
-        title={sectionHeadingData?.title || "شركاؤنا الاستراتيجيون"}
-        description={sectionHeadingData?.description || "نفخر بشراكاتنا مع أفضل الشركات في المجال"}
-      />
-
-      <div className="mb-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {parntersList.map((partner) => (
-          <PartnerCard key={partner.id} data={partner} />
-        ))}
-      </div>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <PartnersSectionCTACard data={partnersCTAData?.card_1} />
-        <PartnersSectionCTACard data={partnersCTAData?.card_2} />
+    <section className="py-section-y-padding to-background bg-linear-to-b from-[#E1DAD5]">
+      <div className="container">
+        <SectionTitleDescription
+          title={sectionHeadingData?.title || "شركاؤنا الاستراتيجيون"}
+          description={
+            sectionHeadingData?.description || "نفخر بشراكاتنا مع أفضل الشركات في المجال"
+          }
+        />
+        <div className="mb-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {parntersList.map((partner) => (
+            <PartnerCard key={partner.id} data={partner} />
+          ))}
+        </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <PartnersSectionCTACard data={partnersCTAData?.card_1} />
+          <PartnersSectionCTACard data={partnersCTAData?.card_2} />
+        </div>
       </div>
     </section>
   );
