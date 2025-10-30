@@ -1,3 +1,4 @@
+import ContactForm from "@/components/contact_page/ContactForm";
 import ContactInfoCard from "@/components/contact_page/ContactInfoCard";
 import ContactInfoCardsContainer from "@/components/contact_page/ContactInfoCardsContainer";
 import PageIntroSection from "@/components/global/PageIntroSection";
@@ -15,6 +16,8 @@ export default async function Contact() {
 
       <div className="py-section-y-padding container">
         <ContactInfoCardsContainer data={Object.values(contactPageInfo?.contact_info || {})} />
+
+        <ContactForm />
       </div>
     </>
   );
