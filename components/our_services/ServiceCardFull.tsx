@@ -9,7 +9,7 @@ export default function ServiceCardFull({ data }: { data: ServiceData }) {
   return (
     <article
       tabIndex={0}
-      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
+      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 flex h-full flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
     >
       {/* This will be visible when hovering */}
       <GradientCardBorder />
@@ -37,11 +37,11 @@ export default function ServiceCardFull({ data }: { data: ServiceData }) {
         </span>
       </div>
 
-      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius px-3 pt-3 pb-6 transition">
+      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius flex flex-1 flex-col px-3 pt-3 pb-6 transition">
         <h3 className="text-body-large text-primary mb-2">{title}</h3>
-        <p className="text-body-small text-primary-light">{description}</p>
+        <p className="text-body-small text-primary-light mb-5">{description}</p>
 
-        <hr className="border-secondary-light my-5" />
+        <hr className="border-secondary-light mt-auto mb-5" />
 
         <ButtonPrimaryArrow text="اطلب الخدمة الآن" className="w-full p-3" />
       </div>
