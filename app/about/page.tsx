@@ -1,10 +1,13 @@
 import OurStorySection from "@/components/about_page/OurStorySection";
+import VisionMessageCard from "@/components/about_page/VisionMessageCard";
 import PageIntroSection from "@/components/global/PageIntroSection";
 import OurValues from "@/components/our_values/Index";
+import { getAboutPageInfo } from "@/utils/getAboutPageInfo";
 import { getPageHeading } from "@/utils/getPageHeading";
 
 export default async function About() {
   const pageHeading = await getPageHeading("about");
+  const aboutPageData = await getAboutPageInfo();
 
   return (
     <>
@@ -17,6 +20,12 @@ export default async function About() {
 
       <div className="py-section-y-padding container">
         <OurStorySection />
+
+        <div className="mb-section-y-padding grid gap-5 lg:grid-cols-2">
+          <VisionMessageCard data={aboutPageData?.vision_message.card_1} />
+          <VisionMessageCard data={aboutPageData?.vision_message.card_2} />
+        </div>
+
         <OurValues />
       </div>
     </>
