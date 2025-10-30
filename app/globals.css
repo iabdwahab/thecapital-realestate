@@ -11,6 +11,8 @@
 
   --spacing-section-y-padding: 64px;
   --radius-card-radius: 20px;
+
+  --breakpoint-header-breakpoint: 1100px;
 }
 
 @utility container {

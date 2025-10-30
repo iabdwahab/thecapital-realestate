@@ -40,7 +40,7 @@ export default function HeaderNav() {
   ];
 
   return (
-    <nav className="hidden lg:block">
+    <nav className="header-breakpoint:block hidden">
       <ul className="flex items-center gap-6">
         {navLinks.map((link) => (
           <li key={link.id}>

@@ -3,7 +3,7 @@ import HeaderNav from "./HeaderNav";
 
 export default function Header() {
   return (
-    <header className="bg-background/20 text-body-regular text-background border-secondary-light absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-[35px] py-5 lg:px-[30px]">
+    <header className="bg-background/20 text-body-regular text-background border-secondary-light header-breakpoint:px-[30px] absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-5 py-5">
       <div className="flex items-center gap-3">
         <button className="lg:hidden">
           <svg
@@ -12,7 +12,7 @@ export default function Header() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="size-6"
           >
             <path
               strokeLinecap="round"
@@ -33,7 +33,7 @@ export default function Header() {
           alt="Logo"
           width={60}
           height={20}
-          className="object-contain lg:hidden"
+          className="w-24 object-contain lg:hidden"
         />
       </div>
 
