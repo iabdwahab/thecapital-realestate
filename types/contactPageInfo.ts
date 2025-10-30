@@ -10,4 +10,5 @@ export interface ContactPageInfoCard {
 
 export interface ContactPageInfo {
   contact_info: Record<string, ContactPageInfoCard>;
+  google_maps_location: string;
 }
