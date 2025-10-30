@@ -18,11 +18,11 @@ export default async function Contact() {
 
         <hr className="my-section-y-padding bg-secondary-light h-px w-full border-none" />
 
-        <div className="grid gap-20 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2">
           <ContactForm />
 
-          <div>
-            <div>
+          <div className="flex flex-col gap-8">
+            <div className="h-full max-lg:h-[400px]">
               <iframe
                 src={
                   contactPageInfo?.google_maps_location ||
@@ -31,8 +31,58 @@ export default async function Contact() {
                 allowFullScreen={undefined}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-card-radius border-secondary-light h-[400px] w-full border shadow-lg"
+                className="rounded-card-radius border-secondary-light h-full w-full border shadow-sm"
               ></iframe>
+            </div>
+
+            <div className="gradient-bg-inside text-background rounded-card-radius p-6">
+              <h5 className="text-body-large mb-3">نسعد بخدمتكم</h5>
+              <p className="text-body-regular text-background/80 mb-6">
+                فريقنا المتخصص جاهز للإجابة على جميع استفساراتكم ومساعدتكم في اختيار الفرصة
+                الاستثمارية المناسبة. لا تترددوا في التواصل معنا.
+              </p>
+
+              <ul className="flex flex-col gap-3">
+                <li className="flex items-center gap-3">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                  </span>
+                  <span>متوفرون على مدار الأسبوع</span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                      />
+                    </svg>
+                  </span>
+                  <span>استجابة سريعة خلال 24 ساعة</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
