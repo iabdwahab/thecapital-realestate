@@ -1,11 +1,12 @@
 import Image from "next/image";
 import HeaderNav from "./HeaderNav";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header className="bg-background/20 text-body-regular text-background border-secondary-light header-breakpoint:px-[30px] absolute z-50 flex w-full items-center justify-between rounded-b-xl border px-5 py-5">
       <div className="flex items-center gap-3">
-        <button className="lg:hidden">
+        <button className="header-breakpoint:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -26,14 +27,7 @@ export default function Header() {
           alt="Logo"
           width={150}
           height={50}
-          className="-mt-1.5 hidden object-contain lg:block"
-        />
-        <Image
-          src="/logo-ar-60-20.png"
-          alt="Logo"
-          width={60}
-          height={20}
-          className="w-24 object-contain lg:hidden"
+          className="header-breakpoint:w-[150px] -mt-1.5 block w-24 object-contain"
         />
       </div>
 
@@ -42,7 +36,8 @@ export default function Header() {
       <button className="btn-primary hidden p-3 xl:block">ابدأ استثمارك</button>
 
       <div className="flex items-center gap-3">
-        <button>
+        {/* Search Link */}
+        <Link href="/search">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -57,7 +52,9 @@ export default function Header() {
               d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
             />
           </svg>
-        </button>
+        </Link>
+
+        {/* User Button */}
         <button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
