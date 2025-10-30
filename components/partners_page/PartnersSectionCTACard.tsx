@@ -1,7 +1,13 @@
-import Image from "next/image";
+import { PartnersCTACard } from "@/types/PartnersCTAData";
 import Link from "next/link";
 
-export default function PartnersSectionCTACard() {
+interface Props {
+  data: PartnersCTACard | undefined;
+}
+
+export default function PartnersSectionCTACard({ data }: Props) {
+  let featuresList = Object.values(data?.features || {});
+
   return (
     <article className="rounded-card-radius group hover:gradient-card-hover-light duration-hover-normal bg-background border-secondary-light flex flex-col gap-2 border p-6 shadow-sm transition">
       <div className="group-hover:bg-primary mr-auto w-fit rounded-xl p-3">
@@ -21,69 +27,35 @@ export default function PartnersSectionCTACard() {
         </svg>
       </div>
 
-      <h3 className="text-body-large text-primary mb-2">استثمر معنا</h3>
-      <p className="text-primary-light text-body-small mb-3">
-        فرص استثمارية مميزة في مشاريع عقارية متنوعة بعوائد جذابة ومخاطر محسوبة
-      </p>
+      <h3 className="text-body-large text-primary mb-2">{data?.title}</h3>
+      <p className="text-primary-light text-body-small mb-3">{data?.description} </p>
 
       <ul className="text-primary-light flex flex-col gap-2">
-        <li className="flex items-center gap-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-            />
-          </svg>
-          <span>عوائد استثمارية مرتفعة</span>
-        </li>
-        <li className="flex items-center gap-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-            />
-          </svg>
-          <span>عوائد استثمارية مرتفعة</span>
-        </li>
-        <li className="flex items-center gap-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-            />
-          </svg>
-          <span>عوائد استثمارية مرتفعة</span>
-        </li>
+        {featuresList.map((feature, index) => (
+          <li key={index} className="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))}
       </ul>
 
       <hr className="border-secondary-light my-3" />
 
-      <Link href="#" className="btn-primary text-center">
-        استكشف الفرص الاستثمارية
+      <Link href={data?.link.href || "#"} className="btn-primary text-center">
+        {data?.link.text}
       </Link>
     </article>
   );

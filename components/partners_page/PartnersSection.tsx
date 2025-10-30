@@ -4,12 +4,13 @@ import PartnerCard from "./PartnerCard";
 import { SectionHeadingData } from "@/types/pageHeading";
 import { getSectionHeading } from "@/utils/getSectionHeading";
 import PartnersSectionCTACard from "./PartnersSectionCTACard";
-import ButtonPrimaryArrow from "../global/ButtonPrimaryArrow";
-import Link from "next/link";
+
+import { getPartnersCTAData } from "@/utils/getPartnersCTAData";
 
 export default async function PartnersSection() {
   const sectionHeadingData: SectionHeadingData | null = await getSectionHeading("partners");
   const parntersList = await getPartners();
+  const partnersCTAData = await getPartnersCTAData();
 
   return (
     <section className="py-section-y-padding container">
@@ -25,8 +26,8 @@ export default async function PartnersSection() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <PartnersSectionCTACard />
-        <PartnersSectionCTACard />
+        <PartnersSectionCTACard data={partnersCTAData?.card_1} />
+        <PartnersSectionCTACard data={partnersCTAData?.card_2} />
       </div>
     </section>
   );
