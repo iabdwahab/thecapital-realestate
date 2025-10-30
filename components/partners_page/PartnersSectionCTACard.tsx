@@ -30,7 +30,7 @@ export default function PartnersSectionCTACard({ data }: Props) {
       <h3 className="text-body-large text-primary mb-2">{data?.title}</h3>
       <p className="text-primary-light text-body-small mb-3">{data?.description} </p>
 
-      <ul className="text-primary-light flex flex-col gap-2">
+      <ul className="text-primary-light mb-3 flex flex-col gap-2">
         {featuresList.map((feature, index) => (
           <li key={index} className="flex items-center gap-1">
             <svg
@@ -52,7 +52,7 @@ export default function PartnersSectionCTACard({ data }: Props) {
         ))}
       </ul>
 
-      <hr className="border-secondary-light my-3" />
+      <hr className="border-secondary-light mt-auto mb-3" />
 
       <Link href={data?.link.href || "#"} className="btn-primary text-center">
         {data?.link.text}

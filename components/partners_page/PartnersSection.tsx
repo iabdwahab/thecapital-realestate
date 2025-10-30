@@ -25,7 +25,7 @@ export default async function PartnersSection() {
         ))}
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         <PartnersSectionCTACard data={partnersCTAData?.card_1} />
         <PartnersSectionCTACard data={partnersCTAData?.card_2} />
       </div>
