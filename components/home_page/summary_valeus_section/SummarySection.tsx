@@ -32,7 +32,7 @@ export default async function SummarySection() {
         />
       </div>
 
-      <span className="absolute bottom-0 left-0 h-1/2 w-full translate-y-2/3 bg-[#D0D8DF] blur-2xl lg:w-1/2 lg:translate-y-1/2"></span>
+      <span className="absolute bottom-0 left-0 h-1/2 w-[200%] -translate-x-1/2 translate-y-2/3 bg-[#D0D8DF] blur-2xl lg:w-full lg:translate-y-1/2"></span>
     </div>
   );
 }
