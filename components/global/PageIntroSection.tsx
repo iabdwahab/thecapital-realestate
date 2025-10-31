@@ -1,5 +1,6 @@
 import { SectionHeadingData } from "@/types/pageHeading";
 import Image from "next/image";
+import BlurryCirlce from "./BlurryCirlce";
 
 interface Props {
   data: SectionHeadingData | null;
@@ -7,7 +8,10 @@ interface Props {
 
 export default function PageIntroSection({ data }: Props) {
   return (
-    <main className="text-background from-primary to-primary-light relative bg-linear-to-b text-center">
+    <main className="text-background bg-primary relative z-10 overflow-hidden text-center">
+      <BlurryCirlce className="top-0 left-0 -translate-1/2" />
+      <BlurryCirlce className="right-0 bottom-0 translate-1/2" />
+
       <div className="container flex min-h-screen flex-col items-center justify-center">
         <div>
           <Image src="/logo-aren.png" alt="The Capital Logo" width={206} height={52} />
