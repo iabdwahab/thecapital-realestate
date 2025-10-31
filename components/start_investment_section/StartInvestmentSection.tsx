@@ -22,10 +22,10 @@ export default async function StartInvestmentSection() {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/projects"
-            className="btn-primary text-primary flex w-fit items-center gap-3 bg-white hover:bg-white/90 active:bg-white/80"
+            className="btn-primary text-primary flex w-full items-center justify-center gap-3 bg-white hover:bg-white/90 active:bg-white/80 sm:w-fit"
           >
             <span>تصفح المشاريع</span>
             <svg
@@ -43,7 +43,10 @@ export default async function StartInvestmentSection() {
               />
             </svg>
           </Link>
-          <Link href="/contact" className="btn-primary border-secondary-light border">
+          <Link
+            href="/contact"
+            className="btn-primary border-secondary-light w-full border sm:w-fit"
+          >
             <span>تواصل معنا</span>
           </Link>
         </div>
