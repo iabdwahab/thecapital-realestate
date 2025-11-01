@@ -5,7 +5,7 @@ import HeaderNav from "./HeaderNav";
 import Link from "next/link";
 import HeaderNavMobile from "./HeaderNavMobile";
 import { HeaderInfo } from "@/types/headerInfo";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   headerInfo: HeaderInfo | null;
@@ -15,14 +15,34 @@ export default function Header({ headerInfo }: Props) {
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const headerNavMobileRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1100);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+
+    // This is for closing the mobile menu when clicking outside it.
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        headerNavMobileRef.current &&
+        !headerNavMobileRef.current.contains(event.target as Node)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header
@@ -61,6 +81,7 @@ export default function Header({ headerInfo }: Props) {
 
       {isMobile ? (
         <HeaderNavMobile
+          navRef={headerNavMobileRef}
           isMobileMenuOpen={isMobileMenuOpen}
           navLinks={Object.values(headerInfo?.nav_links || [])}
         />
