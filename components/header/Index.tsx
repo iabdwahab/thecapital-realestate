@@ -15,6 +15,7 @@ export default function Header({ headerInfo }: Props) {
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const headerNavMobileRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -28,7 +29,9 @@ export default function Header({ headerInfo }: Props) {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         headerNavMobileRef.current &&
-        !headerNavMobileRef.current.contains(event.target as Node)
+        !headerNavMobileRef.current.contains(event.target as Node) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target as Node)
       ) {
         setIsMobileMenuOpen(false);
       }
@@ -50,6 +53,7 @@ export default function Header({ headerInfo }: Props) {
     >
       <div className="flex items-center gap-3">
         <button
+          ref={menuButtonRef}
           className="header-breakpoint:hidden"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
