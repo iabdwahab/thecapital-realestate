@@ -7,6 +7,7 @@ import HeaderNavMobile from "./HeaderNavMobile";
 import { HeaderInfo } from "@/types/headerInfo";
 import { useEffect, useRef, useState } from "react";
 import HeaderProfileCard from "./HeaderProfileCard";
+import { usePathname } from "next/navigation";
 
 interface Props {
   headerInfo: HeaderInfo | null;
@@ -21,6 +22,14 @@ export default function Header({ headerInfo }: Props) {
   const headerNavMobileRef = useRef<HTMLElement>(null);
   const userProfileCardButtonRef = useRef<HTMLButtonElement>(null);
   const userProfileCardRef = useRef<HTMLDivElement>(null);
+
+  const pathname = usePathname();
+
+  // This for URL changing
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsUserProfileCardOpen(false);
+  }, [pathname]);
 
   // This is for resizing window
   useEffect(() => {
