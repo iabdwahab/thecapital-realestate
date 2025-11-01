@@ -5,7 +5,7 @@ interface Props {
   navLinks: NavLink[];
 }
 
-export default async function HeaderNav({ navLinks }: Props) {
+export default function HeaderNav({ navLinks }: Props) {
   return (
     <nav className="header-breakpoint:block hidden">
       <ul className="flex items-center gap-6">
