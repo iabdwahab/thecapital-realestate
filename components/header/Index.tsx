@@ -6,6 +6,7 @@ import Link from "next/link";
 import HeaderNavMobile from "./HeaderNavMobile";
 import { HeaderInfo } from "@/types/headerInfo";
 import { useEffect, useRef, useState } from "react";
+import HeaderProfileCard from "./HeaderProfileCard";
 
 interface Props {
   headerInfo: HeaderInfo | null;
@@ -14,6 +15,7 @@ interface Props {
 export default function Header({ headerInfo }: Props) {
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserProfileCardOpen, setIsUserProfileCardOpen] = useState(false);
 
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const headerNavMobileRef = useRef<HTMLElement>(null);
@@ -49,9 +51,10 @@ export default function Header({ headerInfo }: Props) {
 
   return (
     <header
-      className={`${isMobileMenuOpen && isMobile ? "rounded-t-xl" : "rounded-b-xl"} bg-background/20 text-body-regular text-background border-secondary-light header-breakpoint:px-[30px] absolute z-50 flex w-full items-center justify-between border px-5 py-5`}
+      className={`${isMobileMenuOpen && isMobile ? "rounded-t-xl" : "rounded-b-xl"} ${isUserProfileCardOpen ? "rounded-bl-none" : ""} bg-background/20 text-body-regular text-background border-secondary-light header-breakpoint:px-[30px] absolute z-50 flex w-full items-center justify-between border px-5 py-5`}
     >
       <div className="flex items-center gap-3">
+        {/* Menu Button */}
         <button
           ref={menuButtonRef}
           className="header-breakpoint:hidden"
@@ -115,7 +118,7 @@ export default function Header({ headerInfo }: Props) {
         </Link>
 
         {/* User Button */}
-        <button>
+        <button onClick={() => setIsUserProfileCardOpen((prev) => !prev)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -132,6 +135,8 @@ export default function Header({ headerInfo }: Props) {
           </svg>
         </button>
       </div>
+
+      {isUserProfileCardOpen && <HeaderProfileCard />}
     </header>
   );
 }
