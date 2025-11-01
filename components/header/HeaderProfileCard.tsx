@@ -1,8 +1,16 @@
 import Link from "next/link";
+import { RefObject } from "react";
 
-export default function HeaderProfileCard() {
+interface Props {
+  cardRef: RefObject<HTMLDivElement | null>;
+}
+
+export default function HeaderProfileCard({ cardRef }: Props) {
   return (
-    <div className="bg-background/10 border-secondary-light text-body-regular absolute top-full -left-px flex w-56 max-w-full flex-col gap-3 rounded-xl rounded-t-none border px-3 py-6">
+    <div
+      ref={cardRef}
+      className="bg-background/10 border-secondary-light text-body-regular absolute top-full -left-px flex w-56 max-w-full flex-col gap-3 rounded-xl rounded-t-none border px-3 py-6"
+    >
       <div className="">
         <Link href="/login" className="flex items-center gap-2">
           <span>

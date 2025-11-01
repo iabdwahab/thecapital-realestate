@@ -19,7 +19,10 @@ export default function Header({ headerInfo }: Props) {
 
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const headerNavMobileRef = useRef<HTMLElement>(null);
+  const userProfileCardButtonRef = useRef<HTMLButtonElement>(null);
+  const userProfileCardRef = useRef<HTMLDivElement>(null);
 
+  // This is for resizing window
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1100);
@@ -27,11 +30,17 @@ export default function Header({ headerInfo }: Props) {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // This is for closing the mobile menu when clicking outside it.
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // This is for closing the mobile menu when clicking outside it.
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
+        // This prevent nav from closing when clicking inside it
         headerNavMobileRef.current &&
         !headerNavMobileRef.current.contains(event.target as Node) &&
+        // This for triggering outside click
         menuButtonRef.current &&
         !menuButtonRef.current.contains(event.target as Node)
       ) {
@@ -44,10 +53,32 @@ export default function Header({ headerInfo }: Props) {
     }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const handleClickOutsideProfileCard = (event: MouseEvent) => {
+      if (
+        // This prevent card from closing when clicking inside it
+        userProfileCardRef.current &&
+        !userProfileCardRef.current.contains(event.target as Node) &&
+        // This for triggering outside click
+        userProfileCardButtonRef.current &&
+        !userProfileCardButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsUserProfileCardOpen(false);
+      }
+    };
+
+    if (isUserProfileCardOpen) {
+      document.addEventListener("mousedown", handleClickOutsideProfileCard);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideProfileCard);
+    };
+  }, [isUserProfileCardOpen]);
 
   return (
     <header
@@ -118,7 +149,10 @@ export default function Header({ headerInfo }: Props) {
         </Link>
 
         {/* User Button */}
-        <button onClick={() => setIsUserProfileCardOpen((prev) => !prev)}>
+        <button
+          ref={userProfileCardButtonRef}
+          onClick={() => setIsUserProfileCardOpen((prev) => !prev)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -136,7 +170,7 @@ export default function Header({ headerInfo }: Props) {
         </button>
       </div>
 
-      {isUserProfileCardOpen && <HeaderProfileCard />}
+      {isUserProfileCardOpen && <HeaderProfileCard cardRef={userProfileCardRef} />}
     </header>
   );
 }
