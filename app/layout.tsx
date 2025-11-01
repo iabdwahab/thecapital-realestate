@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Index";
 import Header from "@/components/header/Index";
 import { getHeaderInfo } from "@/utils/getHeaderInfo";
+import NextTopLoader from "nextjs-toploader";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -26,6 +27,7 @@ export default async function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={` ${cairo.className} relative min-h-screen antialiased`}>
+        <NextTopLoader color="#f8f8f8" height={5} />
         <Header headerInfo={headerInfo} />
         {children}
         <Footer />
