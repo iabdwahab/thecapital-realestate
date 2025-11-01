@@ -38,7 +38,7 @@ export default function LoginForm() {
 
       <p className="text-body-large text-center">
         ليس لديك حساب؟{" "}
-        <Link href="signup" className="font-bold underline underline-offset-8">
+        <Link href="/signup" className="font-bold underline underline-offset-8">
           إنشاء حساب
         </Link>
       </p>
