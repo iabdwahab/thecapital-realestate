@@ -26,7 +26,7 @@ export default function Header({ headerInfo }: Props) {
 
   return (
     <header
-      className={`${isMobileMenuOpen ? "" : "rounded-b-xl"} bg-background/20 text-body-regular text-background border-secondary-light header-breakpoint:px-[30px] absolute z-50 flex w-full items-center justify-between border px-5 py-5`}
+      className={`${isMobileMenuOpen && isMobile ? "rounded-t-xl" : "rounded-b-xl"} bg-background/20 text-body-regular text-background border-secondary-light header-breakpoint:px-[30px] absolute z-50 flex w-full items-center justify-between border px-5 py-5`}
     >
       <div className="flex items-center gap-3">
         <button

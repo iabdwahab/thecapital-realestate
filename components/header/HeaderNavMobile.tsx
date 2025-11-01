@@ -9,7 +9,7 @@ interface Props {
 export default function HeaderNavMobile({ navLinks, isMobileMenuOpen }: Props) {
   return (
     <nav
-      className={`${isMobileMenuOpen ? "" : "hidden"} border-secondary-light bg-background/20 text-background absolute top-full left-0 w-full rounded-b-xl border p-5`}
+      className={`${isMobileMenuOpen ? "" : "hidden"} border-secondary-light bg-background/20 text-background absolute top-full -right-px -left-px rounded-b-xl border border-t-0 p-5`}
     >
       <ul className="flex flex-col gap-2">
         {navLinks.map((link, index) => (
