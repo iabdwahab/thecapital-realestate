@@ -48,13 +48,15 @@ export default function Header({ headerInfo }: Props) {
             />
           </svg>
         </button>
-        <Image
-          src="/logo-ar-150-50.png"
-          alt="Logo"
-          width={150}
-          height={50}
-          className="header-breakpoint:w-[150px] -mt-1.5 block w-24 object-contain"
-        />
+        <Link href="/">
+          <Image
+            src="/logo-ar-150-50.png"
+            alt="Logo"
+            width={150}
+            height={50}
+            className="header-breakpoint:w-[150px] -mt-1.5 block w-24 object-contain"
+          />
+        </Link>
       </div>
 
       {isMobile ? (
