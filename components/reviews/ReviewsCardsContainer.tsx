@@ -7,8 +7,13 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { ReviewData } from "@/types/reviews";
 
-export default function ReviewsCardsContainer() {
+interface Props {
+  reviewsList: ReviewData[];
+}
+
+export default function ReviewsCardsContainer({ reviewsList }: Props) {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
@@ -23,21 +28,11 @@ export default function ReviewsCardsContainer() {
       }}
       className="reviews-swiper"
     >
-      <SwiperSlide>
-        <ReviewsCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ReviewsCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ReviewsCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ReviewsCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ReviewsCard />
-      </SwiperSlide>
+      {reviewsList.map((review) => (
+        <SwiperSlide key={review.id}>
+          <ReviewsCard data={review} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

@@ -1,9 +1,12 @@
 import { getSectionHeading } from "@/utils/getSectionHeading";
 import ReviewsCardsContainer from "./ReviewsCardsContainer";
+import { getReviews } from "@/utils/getReviews";
 
 export default async function ReviewsSection() {
   const data = await getSectionHeading("opinions");
+  const reviewsList = await getReviews();
 
+  console.log(reviewsList);
   return (
     <section className="py-section-y-padding gradient-bg-inside">
       <div className="container">
@@ -16,7 +19,7 @@ export default async function ReviewsSection() {
           </p>
         </div>
 
-        <ReviewsCardsContainer />
+        <ReviewsCardsContainer reviewsList={reviewsList} />
       </div>
     </section>
   );
