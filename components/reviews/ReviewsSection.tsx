@@ -3,7 +3,7 @@ import ReviewsCardsContainer from "./ReviewsCardsContainer";
 import { getReviews } from "@/utils/getReviews";
 
 export default async function ReviewsSection() {
-  const data = await getSectionHeading("opinions");
+  const data = await getSectionHeading("reviews");
   const reviewsList = await getReviews();
 
   console.log(reviewsList);
