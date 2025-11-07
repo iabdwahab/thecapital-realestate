@@ -2,6 +2,7 @@ import { getSectionHeading } from "@/utils/getSectionHeading";
 import ReviewsCardsContainer from "./ReviewsCardsContainer";
 import { getReviews } from "@/utils/getReviews";
 import ReviewsStatistics from "./ReviewsStatistics";
+import BlurryCirlce from "../global/BlurryCirlce";
 
 export default async function ReviewsSection() {
   const data = await getSectionHeading("reviews");
@@ -9,7 +10,10 @@ export default async function ReviewsSection() {
 
   console.log(reviewsList);
   return (
-    <section className="py-section-y-padding gradient-bg-inside">
+    <section className="py-section-y-padding gradient-bg-inside relative z-10 overflow-hidden">
+      <BlurryCirlce className="top-0 right-0" />
+      <BlurryCirlce className="bottom-0 left-0" />
+
       <div className="container">
         <div>
           <h2 className="text-sub-heading lg:text-heading text-background mb-3">
