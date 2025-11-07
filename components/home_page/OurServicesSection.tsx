@@ -19,9 +19,15 @@ export default async function OurServicesSection() {
           }
         />
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="centered-cards-3-parent">
           {servicesList.map((service) => {
-            return <ServiceCardIconText key={service.id} data={service} />;
+            return (
+              <ServiceCardIconText
+                className="centered-cards-3-child"
+                key={service.id}
+                data={service}
+              />
+            );
           })}
         </div>
       </div>

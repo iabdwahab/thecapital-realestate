@@ -95,6 +95,14 @@ button {
   navigation: auto;
 }
 
+/* Layout Styling */
+@utility centered-cards-3-parent {
+  @apply flex flex-wrap justify-center gap-4;
+}
+@utility centered-cards-3-child {
+  @apply w-full md:w-[calc((100%/2)-16px)] lg:w-[calc((100%/3)-16px)];
+}
+
 /* Swiper Styling */
 
 .swiper-button-next,

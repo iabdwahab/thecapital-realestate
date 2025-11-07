@@ -6,9 +6,15 @@ export default async function OurServicesSection() {
 
   return (
     <section className="py-section-y-padding container">
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="centered-cards-3-parent">
         {servicesList.map((service) => {
-          return <ServiceCardFull key={service.id} data={service} />;
+          return (
+            <ServiceCardFull
+              className="centered-cards-3-child flex flex-col bg-gray-500"
+              key={service.id}
+              data={service}
+            />
+          );
         })}
       </div>
     </section>

@@ -27,7 +27,7 @@ export default function ProjectsFilteration({ allProjects }: Props) {
 
   return (
     <>
-      <div className="rounded-card-radius bg-background flex -translate-y-1/2 items-center justify-center gap-2 px-3 py-6 shadow-lg">
+      <div className="rounded-card-radius bg-background relative z-50 flex -translate-y-1/2 items-center justify-center gap-2 px-3 py-6 shadow-lg">
         {labels.map((label) => {
           return (
             <button
@@ -53,9 +53,11 @@ export default function ProjectsFilteration({ allProjects }: Props) {
       </div>
 
       {filteredProjects.length ? (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="centered-cards-3-parent">
           {filteredProjects?.map((project) => {
-            return <ProjectCardFull key={project.id} data={project} />;
+            return (
+              <ProjectCardFull className="centered-cards-3-child" key={project.id} data={project} />
+            );
           })}
         </div>
       ) : (

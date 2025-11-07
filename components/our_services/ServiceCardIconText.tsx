@@ -2,13 +2,19 @@ import Image from "next/image";
 import GradientCardBorder from "../global/GradientCardBorder";
 import { ServiceData } from "@/types/services";
 
-export default function ServiceCardIconText({ data }: { data: ServiceData }) {
+export default function ServiceCardIconText({
+  data,
+  className,
+}: {
+  data: ServiceData;
+  className?: string;
+}) {
   const { icon, title, description } = data;
 
   return (
     <div
       tabIndex={0}
-      className="border-secondary-light group hover:gradient-card-hover-light max-lg:focus:gradient-card-hover-light bg-background rounded-card-radius duration-hover-normal relative flex flex-col items-center gap-2 border p-6 transition"
+      className={`${className} border-secondary-light group hover:gradient-card-hover-light max-lg:focus:gradient-card-hover-light bg-background rounded-card-radius duration-hover-normal relative flex flex-col items-center gap-2 border p-6 transition`}
     >
       <GradientCardBorder />
       <div className="group-hover:gradient-bg-inside duration-hover-normal max-lg:group-focus:gradient-bg-inside rounded-card-radius p-3 transition">

@@ -3,13 +3,19 @@ import ButtonPrimaryArrow from "../global/ButtonPrimaryArrow";
 import GradientCardBorder from "../global/GradientCardBorder";
 import { ProjectData } from "@/types/projects";
 
-export default function ProjectCardFull({ data }: { data: ProjectData }) {
+export default function ProjectCardFull({
+  data,
+  className,
+}: {
+  data: ProjectData;
+  className?: string;
+}) {
   const { title, description, image, location, icon, status, area, units } = data;
 
   return (
     <article
       tabIndex={0}
-      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 flex h-full flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
+      className={`${className} rounded-card-radius group bg-background duration-hover-normal relative z-10 flex flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5`}
     >
       {/* This will be visible when hovering */}
       <GradientCardBorder />

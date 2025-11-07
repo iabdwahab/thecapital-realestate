@@ -3,13 +3,19 @@ import GradientCardBorder from "../global/GradientCardBorder";
 import ButtonPrimaryArrow from "../global/ButtonPrimaryArrow";
 import { ServiceData } from "@/types/services";
 
-export default function ServiceCardFull({ data }: { data: ServiceData }) {
+export default function ServiceCardFull({
+  data,
+  className,
+}: {
+  data: ServiceData;
+  className?: string;
+}) {
   const { icon, title, description, image } = data;
 
   return (
     <article
       tabIndex={0}
-      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 flex h-full flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
+      className={`${className} rounded-card-radius group bg-background duration-hover-normal relative z-10 flex flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5`}
     >
       {/* This will be visible when hovering */}
       <GradientCardBorder />

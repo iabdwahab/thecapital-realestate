@@ -5,15 +5,16 @@ import { formatDateToArabic, timeFromNowInArabic } from "@/functions/dateManipul
 
 interface Props {
   data: NewsData;
+  className?: string;
 }
 
-export default function NewsCard({ data }: Props) {
+export default function NewsCard({ data, className }: Props) {
   const { image, title, short_description, date } = data;
 
   return (
     <article
       tabIndex={0}
-      className="rounded-card-radius group bg-background duration-hover-normal relative z-10 flex h-full flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5"
+      className={`${className} rounded-card-radius group bg-background duration-hover-normal relative z-10 flex flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5`}
     >
       {/* This will be vWisible when hovering */}
       <GradientCardBorder />
