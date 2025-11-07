@@ -1,6 +1,7 @@
 import { getSectionHeading } from "@/utils/getSectionHeading";
 import ReviewsCardsContainer from "./ReviewsCardsContainer";
 import { getReviews } from "@/utils/getReviews";
+import ReviewsStatistics from "./ReviewsStatistics";
 
 export default async function ReviewsSection() {
   const data = await getSectionHeading("reviews");
@@ -20,6 +21,8 @@ export default async function ReviewsSection() {
         </div>
 
         <ReviewsCardsContainer reviewsList={reviewsList} />
+
+        <ReviewsStatistics className="mt-6" />
       </div>
     </section>
   );
