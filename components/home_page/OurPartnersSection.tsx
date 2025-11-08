@@ -22,9 +22,9 @@ export default async function OurPartnersSection() {
           </p>
         </div>
 
-        <div className="mb-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="centered-cards-3-parent mb-6">
           {parntersList.map((partner) => (
-            <PartnerCard key={partner.id} data={partner} />
+            <PartnerCard className="centered-cards-3-child" key={partner.id} data={partner} />
           ))}
         </div>
 
