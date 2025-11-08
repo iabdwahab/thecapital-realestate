@@ -12,11 +12,17 @@ export default function PartnerCard({ data }: { data: PartnerData }) {
     >
       <GradientCardBorder />
 
-      <div className="group-hover:bg-primary max-lg:group-focus:bg-primary duration-hover-normal rounded-card-radius p-3 transition">
-        <Image src={icon || "/icons/bank.png"} alt="Icon" width={50} height={50} className="" />
+      <div className="rounded-card-radius p-3">
+        <Image
+          src={icon || "/icons/bank.png"}
+          alt="Icon"
+          width={220}
+          height={90}
+          className="h-[90px] w-[220px] object-contain"
+        />
       </div>
-      <h3 className="text-body-large text-primary">{name}</h3>
-      <p className="text-body-small text-primary-light">{partnership_field}</p>
+      <h3 className="text-body-large text-primary text-center">{name}</h3>
+      <p className="text-body-small text-primary-light text-center">{partnership_field}</p>
     </article>
   );
 }

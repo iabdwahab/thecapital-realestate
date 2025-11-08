@@ -9,7 +9,7 @@ export default async function OurPartnersSection() {
   const parntersList = await getPartners();
 
   return (
-    <section className="relative z-20 bg-[url('/home_page/partners-section.png')] bg-cover bg-center">
+    <section className="relative z-20 bg-[url('/home_page/partners-section.png')] bg-cover bg-bottom">
       <span className="absolute top-0 left-0 -z-10 h-full w-full bg-black/60"></span>
 
       <div className="py-section-y-padding container">

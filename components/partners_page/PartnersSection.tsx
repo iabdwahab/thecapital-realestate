@@ -21,9 +21,7 @@ export default async function PartnersSection() {
             sectionHeadingData?.description || "نفخر بشراكاتنا مع أفضل الشركات في المجال"
           }
         />
-        <p className="absolute left-1/2 z-50 -translate-x-1/2 text-2xl text-red-700">
-          لسة شغال عليها! 🙂
-        </p>
+
         <div className="mb-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {parntersList.map((partner) => (
             <PartnerCard key={partner.id} data={partner} />
