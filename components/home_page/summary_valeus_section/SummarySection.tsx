@@ -28,11 +28,11 @@ export default async function SummarySection() {
           alt="Summary Values Image"
           width={380}
           height={680}
-          className="object-cover"
+          className="w-full max-w-[300px] object-contain lg:max-w-[350px]"
         />
       </div>
 
-      <span className="absolute bottom-0 left-0 h-1/2 w-[200%] -translate-x-1/2 translate-y-2/3 bg-[#D0D8DF] blur-2xl lg:w-full lg:translate-y-1/2"></span>
+      <span className="absolute bottom-0 left-1/2 h-1/2 w-[200%] -translate-x-1/2 translate-y-2/3 bg-[#D0D8DF] blur-2xl lg:left-0 lg:w-full lg:translate-y-1/2"></span>
     </div>
   );
 }
