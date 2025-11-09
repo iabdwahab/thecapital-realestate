@@ -26,7 +26,7 @@ export default async function ReviewsSection() {
 
         <ReviewsCardsContainer reviewsList={reviewsList} />
 
-        <ReviewsStatistics className="mt-6" />
+        <ReviewsStatistics className="mt-16" />
       </div>
     </section>
   );

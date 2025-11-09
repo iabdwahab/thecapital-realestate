@@ -8,7 +8,7 @@ export default async function ReviewsStatistics({ className }: Props) {
   const data = await getReviewsStatistics();
 
   return (
-    <div className={`${className} grid gap-2 md:grid-cols-3`}>
+    <div className={`${className} grid gap-10 md:grid-cols-3`}>
       <div className="rounded-card-radius bg-background flex flex-col gap-3 px-6 py-3 text-center">
         <p className="text-sub-heading text-primary">{data?.statistics_1.rating}</p>
         <h3 className="text-body-regular text-primary-light">{data?.statistics_1.title}</h3>

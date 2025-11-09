@@ -17,7 +17,7 @@ export default function ReviewsCardsContainer({ reviewsList }: Props) {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={12}
+      spaceBetween={40}
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
