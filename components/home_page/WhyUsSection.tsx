@@ -3,13 +3,22 @@ import SectionTitleDescription from "../global/SectionTitleDescription";
 import WhyUsCard from "../why_us/WhyUsCard";
 import { SectionHeadingData } from "@/types/sectionHeading";
 import { getWhyUsReasons } from "@/utils/getWhyUsReasons";
+import Image from "next/image";
 
 export default async function WhyUsSection() {
   const sectionHeadingData: SectionHeadingData | null = await getSectionHeading("why_us");
   const whyUsReasons = await getWhyUsReasons();
 
   return (
-    <section className="py-section-y-padding bg-[url('/services/background-shape.png')] bg-cover">
+    <section className="py-section-y-padding relative">
+      <Image
+        src="/shapes/waves-top.png"
+        alt="Background Image"
+        width={1440}
+        height={1043}
+        className="absolute top-0 right-0 bottom-0 left-0 -z-10 h-full w-full object-cover object-top"
+      />
+
       <div className="container">
         <SectionTitleDescription
           title={sectionHeadingData?.title || "لماذا ذا كابيتال؟"}
