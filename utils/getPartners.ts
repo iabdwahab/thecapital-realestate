@@ -2,7 +2,9 @@ import { PartnerFetchedObject } from "@/types/partners";
 
 export async function getPartners() {
   try {
-    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/partners`);
+    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/partners`, {
+      next: { revalidate: 60 },
+    });
 
     const reasonsArray: PartnerFetchedObject[] = await reasonsRes.json();
 

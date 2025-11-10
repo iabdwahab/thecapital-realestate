@@ -4,6 +4,9 @@ export async function getPageHeading(page_slug: string) {
   try {
     const sectionHeadingRes = await fetch(
       `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/pages_heading?slug=${page_slug}&_fields=id,slug,acf`,
+      {
+        next: { revalidate: 60 },
+      },
     );
 
     const pageHeadingArray: PageHeadingFetchedObject[] = await sectionHeadingRes.json();

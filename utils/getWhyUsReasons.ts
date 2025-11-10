@@ -2,7 +2,9 @@ import { WhyUsReasonFetchedObject } from "@/types/whyUs";
 
 export async function getWhyUsReasons() {
   try {
-    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/why_us`);
+    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/why_us`, {
+      next: { revalidate: 60 },
+    });
 
     const reasonsArray: WhyUsReasonFetchedObject[] = await reasonsRes.json();
 

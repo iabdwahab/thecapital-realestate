@@ -2,7 +2,9 @@ import { ReviewsStatisticsFetchedObject } from "@/types/reviewsStatistics";
 
 export async function getReviewsStatistics() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/481`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/481`, {
+      next: { revalidate: 60 },
+    });
 
     const data: ReviewsStatisticsFetchedObject = await res.json();
 

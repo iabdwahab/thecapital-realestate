@@ -2,7 +2,9 @@ import { ValueFetchedObject } from "@/types/values";
 
 export async function getValues() {
   try {
-    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/values`);
+    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/values`, {
+      next: { revalidate: 60 },
+    });
 
     const reasonsArray: ValueFetchedObject[] = await reasonsRes.json();
 

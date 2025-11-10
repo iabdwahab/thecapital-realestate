@@ -4,6 +4,9 @@ export async function getSectionHeading(section_slug: string) {
   try {
     const sectionHeadingRes = await fetch(
       `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/sections?slug=${section_slug}&_fields=id,slug,acf`,
+      {
+        next: { revalidate: 60 },
+      },
     );
 
     const sectionHeadingArray: SectionHeadingFetchedObject[] = await sectionHeadingRes.json();

@@ -4,6 +4,9 @@ export async function getNews() {
   try {
     const NewsRes = await fetch(
       `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/news?_fields=id,acf,date`,
+      {
+        next: { revalidate: 60 },
+      },
     );
 
     const NewsArray: NewsFetchedObject[] = await NewsRes.json();

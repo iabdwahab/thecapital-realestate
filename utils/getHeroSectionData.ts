@@ -2,7 +2,9 @@ import { HeroSectionFetchedObject } from "@/types/heroSectionData";
 
 export async function getHeroSectionData() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/456`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/456`, {
+      next: { revalidate: 60 },
+    });
 
     const data: HeroSectionFetchedObject = await res.json();
 

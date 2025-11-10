@@ -2,7 +2,9 @@ import { SummarySectionDataFetchedObject } from "@/types/summarySectionData";
 
 export async function getSummarySectionData() {
   try {
-    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/158`);
+    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/158`, {
+      next: { revalidate: 60 },
+    });
 
     const data: SummarySectionDataFetchedObject = await reasonsRes.json();
 

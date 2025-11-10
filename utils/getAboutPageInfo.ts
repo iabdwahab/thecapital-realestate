@@ -2,7 +2,9 @@ import { AboutPageInfoFetchedObject } from "@/types/aboutPageInfo";
 
 export async function getAboutPageInfo() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/346`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/posts/346`, {
+      next: { revalidate: 60 },
+    });
 
     const data: AboutPageInfoFetchedObject = await res.json();
 

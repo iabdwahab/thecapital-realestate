@@ -2,7 +2,9 @@ import { ProjectFetchedObject } from "@/types/projects";
 
 export async function getProjects() {
   try {
-    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/projects`);
+    const reasonsRes = await fetch(`${process.env.NEXT_PUBLIC_ACF_API_URL}/projects`, {
+      next: { revalidate: 60 },
+    });
 
     const reasonsArray: ProjectFetchedObject[] = await reasonsRes.json();
 
