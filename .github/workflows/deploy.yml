@@ -6,6 +6,9 @@ on:
   push:
     branches:
       - main # Trigger the workflow on pushes to the main branch
+  workflow_dispatch: # Manual trigger from GitHub UI
+  repository_dispatch:
+    types: [wordpress_trigger] # Triggered by your WordPress plugin
 
 jobs:
   build_and_deploy:
