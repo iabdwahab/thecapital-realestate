@@ -1,6 +1,5 @@
 import { NavLink } from "@/types/headerInfo";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { RefObject } from "react";
 
 interface Props {
@@ -10,8 +9,6 @@ interface Props {
 }
 
 export default function HeaderNavMobile({ navLinks, isMobileMenuOpen, navRef }: Props) {
-  const currentPath = usePathname();
-
   return (
     <nav
       ref={navRef}
@@ -20,10 +17,7 @@ export default function HeaderNavMobile({ navLinks, isMobileMenuOpen, navRef }: 
       <ul className="flex flex-col gap-2">
         {navLinks.map((link, index) => (
           <li key={index}>
-            <Link
-              href={link.href}
-              className={`${currentPath === link.href ? "font-semibold" : ""} text-body-small block`}
-            >
+            <Link href={link.href} className={`text-body-small block`}>
               {link.text}
             </Link>
           </li>
