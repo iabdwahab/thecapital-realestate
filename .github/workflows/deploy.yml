@@ -44,10 +44,10 @@ jobs:
       - name: 🚀 Deploy to Host via FTP/SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          port: 21
           # The local directory is the 'out' folder created by the build step
           local-dir: ./out/
           # Use --delete to remove old files on the host that are no longer in the 'out' folder
