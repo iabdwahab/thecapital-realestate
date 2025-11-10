@@ -10,7 +10,6 @@ import StartInvestmentSection from "@/components/start_investment_section/StartI
 export default function Home() {
   return (
     <>
-      <p>test</p>
       <HeroSection />
       <SummaryValuesSection />
       <OurServicesSection />
