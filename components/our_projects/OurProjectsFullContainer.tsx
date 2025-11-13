@@ -5,9 +5,9 @@ export default async function OurProjectsFullContainer() {
   const projectsList = await getProjects();
 
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="centered-cards-3-parent">
       {projectsList.map((value) => {
-        return <ProjectCardFull key={value.id} data={value} />;
+        return <ProjectCardFull className="centered-cards-3-child" key={value.id} data={value} />;
       })}
     </div>
   );
