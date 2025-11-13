@@ -50,8 +50,20 @@ export default function ServiceCardFull({
 
         <hr className="border-secondary-light mt-auto mb-5" />
 
-        <Link href={card_link?.href || "/contact"} className="btn-primary w-full p-3 text-center">
+        <Link
+          href={card_link?.href || "/contact"}
+          className="btn-primary flex w-full items-center justify-center gap-2 text-center"
+        >
           {card_link?.text || "اطلب الخدمة الآن"}
+          <span>
+            <Image
+              src="/icons/arrow-up.svg"
+              alt="Arrow Icon"
+              width={20}
+              height={20}
+              className="-rotate-90"
+            />
+          </span>
         </Link>
       </div>
     </article>

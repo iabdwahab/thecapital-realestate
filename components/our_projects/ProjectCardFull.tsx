@@ -2,6 +2,7 @@ import Image from "next/image";
 import ButtonPrimaryArrow from "../global/ButtonPrimaryArrow";
 import GradientCardBorder from "../global/GradientCardBorder";
 import { ProjectData } from "@/types/projects";
+import Link from "next/link";
 
 export default function ProjectCardFull({
   data,
@@ -10,7 +11,7 @@ export default function ProjectCardFull({
   data: ProjectData;
   className?: string;
 }) {
-  const { title, description, image, location, icon, status, area, units } = data;
+  const { title, description, image, location, icon, status, area, units, card_link } = data;
 
   return (
     <article
@@ -70,7 +71,21 @@ export default function ProjectCardFull({
           </div>
         </div>
 
-        <ButtonPrimaryArrow text="استثمر الآن" className="w-full" />
+        <Link
+          href={card_link?.href || "https://wa.me/9660554910233"}
+          className="btn-primary flex w-full items-center justify-center gap-2 text-center"
+        >
+          {card_link?.text || "استثمر الآن"}
+          <span>
+            <Image
+              src="/icons/arrow-up.svg"
+              alt="Arrow Icon"
+              width={20}
+              height={20}
+              className="-rotate-90"
+            />
+          </span>
+        </Link>
       </div>
     </article>
   );

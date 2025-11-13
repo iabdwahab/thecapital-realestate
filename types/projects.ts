@@ -10,6 +10,10 @@ export interface ProjectFetchedObject {
     area: string;
     type: "سكني" | "تجاري";
     status: string;
+    card_link: {
+      text: string;
+      href: string;
+    };
   };
 }
 
@@ -24,4 +28,8 @@ export interface ProjectData {
   area: string;
   type: "سكني" | "تجاري";
   status: string;
+  card_link: {
+    text: string;
+    href: string;
+  };
 }
