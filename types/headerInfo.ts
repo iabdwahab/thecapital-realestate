@@ -9,4 +9,8 @@ export interface NavLink {
 
 export interface HeaderInfo {
   nav_links: Record<string, NavLink>;
+  cta_button: {
+    text: string;
+    href: string;
+  };
 }

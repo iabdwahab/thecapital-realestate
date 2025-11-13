@@ -136,7 +136,12 @@ export default function Header({ headerInfo }: Props) {
         <HeaderNav navLinks={Object.values(headerInfo?.nav_links || [])} />
       )}
 
-      <button className="btn-primary hidden p-3 xl:block">ابدأ استثمارك</button>
+      <Link
+        href={headerInfo?.cta_button.href || "/contact"}
+        className="btn-primary hidden p-3 xl:block"
+      >
+        {headerInfo?.cta_button.text || "ابدأ استثمارك"}
+      </Link>
 
       <div className="flex items-center gap-3">
         {/* Search Link */}
