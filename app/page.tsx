@@ -17,7 +17,7 @@ export default function Home() {
       <StartInvestmentSection />
       <OurPartnersSection />
       <OurPojectsSection />
-      <ReviewsSection />
+      {/* <ReviewsSection /> */}
     </>
   );
 }
