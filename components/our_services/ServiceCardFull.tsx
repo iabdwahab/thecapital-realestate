@@ -2,6 +2,7 @@ import Image from "next/image";
 import GradientCardBorder from "../global/GradientCardBorder";
 import ButtonPrimaryArrow from "../global/ButtonPrimaryArrow";
 import { ServiceData } from "@/types/services";
+import Link from "next/link";
 
 export default function ServiceCardFull({
   data,
@@ -10,7 +11,7 @@ export default function ServiceCardFull({
   data: ServiceData;
   className?: string;
 }) {
-  const { icon, title, description, image } = data;
+  const { icon, title, description, image, card_link } = data;
 
   return (
     <article
@@ -49,7 +50,9 @@ export default function ServiceCardFull({
 
         <hr className="border-secondary-light mt-auto mb-5" />
 
-        <ButtonPrimaryArrow text="اطلب الخدمة الآن" className="w-full p-3" />
+        <Link href={card_link?.href || "/contact"} className="btn-primary w-full p-3 text-center">
+          {card_link?.text || "اطلب الخدمة الآن"}
+        </Link>
       </div>
     </article>
   );

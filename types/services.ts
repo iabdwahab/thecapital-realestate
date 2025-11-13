@@ -5,6 +5,10 @@ export interface ServiceFetchedObject {
     description: string;
     image: string | false;
     icon: string | false;
+    card_link: {
+      text: string;
+      href: string;
+    };
   };
 }
 
@@ -14,4 +18,8 @@ export interface ServiceData {
   description: string;
   image: string | false;
   icon: string | false;
+  card_link: {
+    text: string;
+    href: string;
+  };
 }
