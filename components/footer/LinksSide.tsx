@@ -127,7 +127,7 @@ export default async function LinksSide({ contactInfo }: Props) {
         <ul className="text-body-small flex flex-col gap-3 text-[#CDD2D3]">
           {servicesList.map((service) => (
             <li key={service.id}>
-              <Link href="#">{service.title}</Link>
+              <Link href="/contact">{service.title}</Link>
             </li>
           ))}
         </ul>

@@ -144,6 +144,16 @@ export default function Header({ headerInfo }: Props) {
       </Link>
 
       <div className="flex items-center gap-3">
+        <Link href="https://wa.me/9660554910233" target="_blank">
+          <Image
+            src="/logos/whatsapp.webp"
+            alt="whatsapp logo"
+            width={20}
+            height={20}
+            className=""
+          />
+        </Link>
+
         {/* Search Link */}
         <Link href="/search">
           <svg
