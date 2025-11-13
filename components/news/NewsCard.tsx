@@ -33,19 +33,19 @@ export default function NewsCard({ data, className }: Props) {
 
         {/* This is the status of the project */}
         <span className="bg-primary text-body-small text-background absolute top-3 right-3 z-20 rounded-xl p-3">
-          فعاليات
+          أخبار
         </span>
       </div>
 
-      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius flex flex-1 flex-col px-3 pt-3 pb-6 transition">
-        <div className="mb-3">
+      <div className="bg-background duration-hover-normal group-hover:gradient-card-hover-light max-lg:group-focus:gradient-card-hover-light rounded-b-card-radius flex flex-1 flex-col px-3 py-3 transition">
+        <div className="">
           <h3 className="text-primary text-body-large mb-2">{title} </h3>
           <p className="text-primary-light text-body-regular">{short_description}</p>
         </div>
 
-        <hr className="bg-secondary-light mt-auto mb-3 h-[0.5px] w-full border-none" />
+        {/* <hr className="bg-secondary-light mt-auto mb-3 h-[0.5px] w-full border-none" /> */}
 
-        <div className="text-body-small text-primary-light flex items-center justify-between gap-3 px-2">
+        {/* <div className="text-body-small text-primary-light flex items-center justify-between gap-3 px-2">
           <div className="flex items-center gap-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ export default function NewsCard({ data, className }: Props) {
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </article>
   );
