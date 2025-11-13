@@ -26,6 +26,10 @@ export default async function RootLayout({
 
   return (
     <html lang="ar" dir="rtl">
+      <head>
+        <link rel="icon" href="/icon.png" sizes="any" />
+      </head>
+
       <body className={` ${cairo.className} relative min-h-screen antialiased`}>
         <NextTopLoader color="#f8f8f8" height={5} />
         <Header headerInfo={headerInfo} />
