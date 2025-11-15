@@ -34,14 +34,14 @@ export default function LoginForm() {
         />
       </div>
 
-      <button className="btn-secondary mb-16 w-full">تسجيل الدخول</button>
+      <button className="btn-secondary mb-10 w-full">تسجيل الدخول</button>
 
-      <p className="text-body-large text-center">
+      {/* <p className="text-body-large text-center">
         ليس لديك حساب؟{" "}
         <Link href="/signup" className="font-bold underline underline-offset-8">
           إنشاء حساب
         </Link>
-      </p>
+      </p> */}
     </form>
   );
 }
