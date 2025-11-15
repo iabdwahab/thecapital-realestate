@@ -15,9 +15,9 @@ export default async function About() {
 
       <div className="py-section-y-padding from-background bg-linear-to-b from-45% via-[#E1DAD5] via-80% to-[#e9e5e2]">
         <div className="container">
-          <OurStorySection />
+          <OurStorySection data={aboutPageData?.our_story_section} />
 
-          <div className="mb-section-y-padding grid gap-5 lg:grid-cols-2">
+          <div className="my-section-y-padding grid gap-5 lg:grid-cols-2">
             <VisionMessageCard data={aboutPageData?.vision_message.card_1} />
             <VisionMessageCard data={aboutPageData?.vision_message.card_2} />
           </div>
