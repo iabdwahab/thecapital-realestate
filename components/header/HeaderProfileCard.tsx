@@ -33,7 +33,7 @@ export default function HeaderProfileCard({ cardRef }: Props) {
         </Link>
       </div>
 
-      <hr className="border-secondary-light" />
+      {/* <hr className="border-secondary-light" />
 
       <div>
         <button className="flex items-center gap-2">
@@ -55,7 +55,7 @@ export default function HeaderProfileCard({ cardRef }: Props) {
           </span>
           <span>تسجيل الخروج</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
