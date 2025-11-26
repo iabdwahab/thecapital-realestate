@@ -131,6 +131,7 @@ export default function Header({ headerInfo }: Props) {
           navRef={headerNavMobileRef}
           isMobileMenuOpen={isMobileMenuOpen}
           navLinks={Object.values(headerInfo?.nav_links || [])}
+          ctaButtonData={headerInfo?.cta_button}
         />
       ) : (
         <HeaderNav navLinks={Object.values(headerInfo?.nav_links || [])} />

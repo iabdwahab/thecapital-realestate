@@ -6,9 +6,18 @@ interface Props {
   navLinks: NavLink[];
   isMobileMenuOpen: boolean;
   navRef: RefObject<HTMLElement | null>;
+  ctaButtonData?: {
+    href: string;
+    text: string;
+  };
 }
 
-export default function HeaderNavMobile({ navLinks, isMobileMenuOpen, navRef }: Props) {
+export default function HeaderNavMobile({
+  navLinks,
+  isMobileMenuOpen,
+  navRef,
+  ctaButtonData,
+}: Props) {
   return (
     <nav
       ref={navRef}
@@ -23,6 +32,13 @@ export default function HeaderNavMobile({ navLinks, isMobileMenuOpen, navRef }: 
           </li>
         ))}
       </ul>
+
+      <Link
+        href={ctaButtonData?.href || "/contact"}
+        className="btn-primary text-body-small mt-4 block w-full px-4 py-2 text-center font-bold"
+      >
+        {ctaButtonData?.text || "ابدأ استثمارك"}
+      </Link>
     </nav>
   );
 }
