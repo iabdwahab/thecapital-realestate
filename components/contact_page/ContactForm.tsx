@@ -132,6 +132,10 @@ export default function ContactForm() {
               value: /^[0-9+\-() ]+$/,
               message: "صيغة رقم الهاتف غير صالحة",
             },
+            minLength: {
+              value: 7,
+              message: "رقم الهاتف قصير جدًا.",
+            },
           })}
         />
 
