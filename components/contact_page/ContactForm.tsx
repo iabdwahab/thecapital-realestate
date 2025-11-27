@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 // Define the shape of your form data for better type safety
 interface ContactFormData {
@@ -26,8 +27,6 @@ export default function ContactForm() {
 
   // The submit handler now receives the validated data
   async function onSubmit(data: ContactFormData) {
-    console.log("Form Data from RHF:", data);
-
     // Prepare the FormData object for the Contact Form 7 endpoint
     const finalFormData = new FormData();
     finalFormData.append("full-name", data["full-name"]);
@@ -47,16 +46,16 @@ export default function ContactForm() {
       );
 
       const responseData = await res.json();
-      console.log("API Response:", responseData);
 
       if (responseData.status === "mail_sent") {
-        alert("Thank you! Your message has been sent.");
+        toast.success("تم إرسال رسالتك بنجاح!", { position: "top-right" });
+
+        // Reset the form after successful submission
       } else {
-        alert(`Failed to send message: ${responseData.message}`);
+        toast.error(`فشل في إرسال الرسالة: ${responseData.message}`, { position: "top-right" });
       }
     } catch (error) {
-      console.error("Submission Error:", error);
-      alert("An unexpected error occurred during submission.");
+      toast.error("حدث خطأ غير متوقع أثناء الإرسال.", { position: "top-right" });
     }
   }
 
@@ -127,8 +126,12 @@ export default function ContactForm() {
           }`}
           // *** RHF Integration: Use the register function ***
           {...register("phone", {
-            required: "رقم الهاتف مطلوب",
+            required: "يجب إدخال رقم الهاتف.",
             // You can add a pattern rule for specific phone number formats here
+            pattern: {
+              value: /^[0-9+\-() ]+$/,
+              message: "صيغة رقم الهاتف غير صالحة",
+            },
           })}
         />
 
@@ -150,7 +153,7 @@ export default function ContactForm() {
             errors.message ? "border-red-500" : "border-primary"
           }`}
           // *** RHF Integration: Use the register function ***
-          {...register("message", { required: "الرسالة مطلوبة" })}
+          {...register("message", { required: "يجب إدخال الرسالة." })}
         />
 
         <p className={`${errors["message"] ? "visible" : "invisible"} text-sm text-red-500`}>

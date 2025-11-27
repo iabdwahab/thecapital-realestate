@@ -8,6 +8,8 @@ import NextTopLoader from "nextjs-toploader";
 import Link from "next/link";
 import Image from "next/image";
 
+import { ToastContainer, toast } from "react-toastify";
+
 const cairo = Cairo({
   variable: "--font-cairo",
   weight: ["300", "400", "600", "700", "800", "900"],
@@ -48,6 +50,8 @@ export default async function RootLayout({
         </Link>
 
         <NextTopLoader color="#f8f8f8" height={5} />
+        <ToastContainer />
+
         <Header headerInfo={headerInfo} />
         {children}
         <Footer />
