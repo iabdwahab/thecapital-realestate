@@ -1,107 +1,170 @@
 "use client";
 
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+
+// Define the shape of your form data for better type safety
+interface ContactFormData {
+  "full-name": string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    "full-name": "",
-    email: "",
-    phone: "",
-    message: "",
+  const {
+    register, // The main function to connect inputs to RHF
+    handleSubmit,
+    formState: { errors, isSubmitting }, // Get submission status and validation errors
+  } = useForm<ContactFormData>({
+    defaultValues: {
+      "full-name": "",
+      email: "",
+      phone: "",
+      message: "",
+    },
   });
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  // The submit handler now receives the validated data
+  async function onSubmit(data: ContactFormData) {
+    console.log("Form Data from RHF:", data);
 
-    // Handle form submission logic here
-
+    // Prepare the FormData object for the Contact Form 7 endpoint
     const finalFormData = new FormData();
-    finalFormData.append("full-name", formData["full-name"]);
-    finalFormData.append("email", formData.email);
-    finalFormData.append("phone", formData.phone);
-    finalFormData.append("message", formData.message);
+    finalFormData.append("full-name", data["full-name"]);
+    finalFormData.append("email", data.email);
+    finalFormData.append("phone", data.phone);
+    finalFormData.append("message", data.message);
     finalFormData.append("_wpcf7_unit_tag", "wpcf7-f507-p123-o1");
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/contact-form-7/v1/contact-forms/507/feedback`,
-      {
-        method: "POST",
+    // 3. Send the request
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/contact-form-7/v1/contact-forms/507/feedback`,
+        {
+          method: "POST",
+          body: finalFormData,
+        },
+      );
 
-        body: finalFormData,
-      },
-    );
+      const responseData = await res.json();
+      console.log("API Response:", responseData);
 
-    const data = await res.json();
-
-    console.log(data);
+      if (responseData.status === "mail_sent") {
+        alert("Thank you! Your message has been sent.");
+      } else {
+        alert(`Failed to send message: ${responseData.message}`);
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("An unexpected error occurred during submission.");
+    }
   }
 
   return (
     <form
-      onSubmit={handleSubmit}
-      className="rounded-card-radius border-secondary-light text-primary flex flex-col gap-6 border p-8 shadow-sm"
+      onSubmit={handleSubmit(onSubmit)} // RHF's handleSubmit wraps your onSubmit function
+      className="rounded-card-radius border-secondary-light text-primary -6 flex flex-col gap-0 border p-8 shadow-sm"
     >
-      <div className="flex flex-col gap-3">
-        <label htmlFor="name" className="text-body-large">
+      {/* --- Full Name Field --- */}
+      <div className="flex flex-col gap-0">
+        <label htmlFor="full-name" className="text-body-large mb-2">
           الاسم كامل
         </label>
         <input
           type="text"
-          name="full-name"
           id="full-name"
-          value={formData["full-name"]}
-          onChange={(e) => setFormData({ ...formData, "full-name": e.target.value })}
           placeholder="أدخل اسمك بالكامل"
-          className="text-primary-light outline-primary-light text-body-small border-primary rounded-xl border p-3"
+          className={`text-primary-light outline-primary-light text-body-small mb-1 rounded-xl border p-3 ${
+            errors["full-name"] ? "border-red-500" : "border-primary" // Highlight error border
+          }`}
+          // *** RHF Integration: Use the register function with validation rules ***
+          {...register("full-name", { required: "يجب إدخال الاسم." })}
         />
+        {/* Display validation error message */}
+
+        <p className={`${errors["full-name"] ? "visible" : "invisible"} text-sm text-red-500`}>
+          {errors["full-name"] ? errors["full-name"].message : "يجب إدخال الاسم."}
+        </p>
       </div>
 
-      <div className="flex flex-col gap-3">
-        <label htmlFor="email" className="text-body-large">
+      {/* --- Email Field --- */}
+      <div className="flex flex-col gap-0">
+        <label htmlFor="email" className="text-body-large mb-2">
           البريد الإلكتروني
         </label>
         <input
           type="email"
-          name="email"
           id="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           placeholder="أدخل بريدك الإلكتروني"
-          className="text-primary-light text-body-small outline-primary-light border-primary rounded-xl border p-3"
+          className={`text-primary-light text-body-small outline-primary-light mb-1 rounded-xl border p-3 ${
+            errors.email ? "border-red-500" : "border-primary"
+          }`}
+          // *** RHF Integration: Use the register function with validation rules ***
+          {...register("email", {
+            required: "البريد الإلكتروني مطلوب",
+            pattern: {
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+              message: "صيغة البريد الإلكتروني غير صالحة",
+            },
+          })}
         />
+        <p className={`${errors.email ? "visible" : "invisible"} text-sm text-red-500`}>
+          {errors.email ? errors.email.message : "يجب إدخال البريد الإلكتروني."}
+        </p>
       </div>
 
-      <div className="flex flex-col gap-3">
-        <label htmlFor="phone" className="text-body-large">
+      {/* --- Phone Field (Required) --- */}
+      <div className="flex flex-col gap-0">
+        <label htmlFor="phone" className="text-body-large mb-2">
           رقم الهاتف
         </label>
         <input
           type="tel"
-          name="phone"
           id="phone"
-          value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           placeholder="أدخل رقم الهاتف الخاص بك "
-          className="text-primary-light text-body-small outline-primary-light border-primary rounded-xl border p-3"
+          className={`text-primary-light text-body-small outline-primary-light mb-1 rounded-xl border p-3 ${
+            errors.phone ? "border-red-500" : "border-primary"
+          }`}
+          // *** RHF Integration: Use the register function ***
+          {...register("phone", {
+            required: "رقم الهاتف مطلوب",
+            // You can add a pattern rule for specific phone number formats here
+          })}
         />
+
+        <p className={`${errors["phone"] ? "visible" : "invisible"} text-sm text-red-500`}>
+          {errors["phone"] ? errors["phone"].message : "يجب إدخال رقم الهاتف."}
+        </p>
       </div>
 
-      <div className="flex flex-col gap-3">
-        <label htmlFor="message" className="text-body-large">
+      {/* --- Message Field --- */}
+      <div className="mb-6 flex flex-col gap-0">
+        <label htmlFor="message" className="text-body-large mb-2">
           الرسالة
         </label>
         <textarea
-          name="message"
           id="message"
           rows={5}
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="أدخل ما تريد إرساله لنا"
-          className="text-primary-light text-body-small outline-primary-light border-primary rounded-xl border p-3"
+          className={`text-primary-light text-body-small outline-primary-light mb-1 rounded-xl border p-3 ${
+            errors.message ? "border-red-500" : "border-primary"
+          }`}
+          // *** RHF Integration: Use the register function ***
+          {...register("message", { required: "الرسالة مطلوبة" })}
         />
+
+        <p className={`${errors["message"] ? "visible" : "invisible"} text-sm text-red-500`}>
+          {errors["message"] ? errors["message"].message : "يجب إدخال الرسالة."}
+        </p>
       </div>
 
-      <button className="btn-primary">إرسال</button>
+      <button
+        className="btn-primary"
+        type="submit"
+        disabled={isSubmitting} // Disable button while the form is submitting
+      >
+        {isSubmitting ? "جاري الإرسال..." : "إرسال"}
+      </button>
     </form>
   );
 }
