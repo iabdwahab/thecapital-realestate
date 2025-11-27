@@ -157,7 +157,10 @@ export default function ContactForm() {
             errors.message ? "border-red-500" : "border-primary"
           }`}
           // *** RHF Integration: Use the register function ***
-          {...register("message", { required: "يجب إدخال الرسالة." })}
+          {...register("message", {
+            required: "يجب إدخال الرسالة.",
+            minLength: { value: 10, message: "الرسالة قصيرة جدًا." },
+          })}
         />
 
         <p className={`${errors["message"] ? "visible" : "invisible"} text-sm text-red-500`}>
