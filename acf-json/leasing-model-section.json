@@ -1,0 +1,218 @@
+[
+    {
+        "key": "group_lms_leasing_model_section",
+        "title": "الرئيسية - نموذج التأجير وإعادة التأجير",
+        "fields": [
+            {
+                "key": "field_lms_kicker",
+                "label": "الشارة العلوية (Kicker)",
+                "name": "kicker",
+                "type": "text",
+                "instructions": "النص الصغير الذي يظهر أعلى عنوان القسم",
+                "required": 0,
+                "default_value": "نموذج التأجير وإعادة التأجير"
+            },
+            {
+                "key": "field_lms_title",
+                "label": "العنوان",
+                "name": "title",
+                "type": "text",
+                "required": 0,
+                "default_value": "مساران لإنتاج الأصل، ومسار واحد للعائد"
+            },
+            {
+                "key": "field_lms_description",
+                "label": "الوصف",
+                "name": "description",
+                "type": "textarea",
+                "rows": 3,
+                "required": 0
+            },
+            {
+                "key": "field_lms_track_1",
+                "label": "المسار الأول",
+                "name": "track_1",
+                "type": "group",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_lms_track_1_label",
+                        "label": "تسمية المسار",
+                        "name": "label",
+                        "type": "text",
+                        "default_value": "المسار الأول"
+                    },
+                    {
+                        "key": "field_lms_track_1_title",
+                        "label": "عنوان المسار",
+                        "name": "title",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_lms_track_1_description",
+                        "label": "وصف المسار",
+                        "name": "description",
+                        "type": "textarea",
+                        "rows": 3
+                    }
+                ]
+            },
+            {
+                "key": "field_lms_track_2",
+                "label": "المسار الثاني",
+                "name": "track_2",
+                "type": "group",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_lms_track_2_label",
+                        "label": "تسمية المسار",
+                        "name": "label",
+                        "type": "text",
+                        "default_value": "المسار الثاني"
+                    },
+                    {
+                        "key": "field_lms_track_2_title",
+                        "label": "عنوان المسار",
+                        "name": "title",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_lms_track_2_description",
+                        "label": "وصف المسار",
+                        "name": "description",
+                        "type": "textarea",
+                        "rows": 3
+                    }
+                ]
+            },
+            {
+                "key": "field_lms_merge_label",
+                "label": "نص نقطة الالتقاء",
+                "name": "merge_label",
+                "type": "text",
+                "default_value": "يلتقي المساران هنا"
+            },
+            {
+                "key": "field_lms_step_1",
+                "label": "الخطوة 01",
+                "name": "step_1",
+                "type": "group",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_lms_step_1_title",
+                        "label": "العنوان",
+                        "name": "title",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_lms_step_1_description",
+                        "label": "الوصف",
+                        "name": "description",
+                        "type": "textarea",
+                        "rows": 3
+                    }
+                ]
+            },
+            {
+                "key": "field_lms_step_2",
+                "label": "الخطوة 02",
+                "name": "step_2",
+                "type": "group",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_lms_step_2_title",
+                        "label": "العنوان",
+                        "name": "title",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_lms_step_2_description",
+                        "label": "الوصف",
+                        "name": "description",
+                        "type": "textarea",
+                        "rows": 3
+                    }
+                ]
+            },
+            {
+                "key": "field_lms_step_3",
+                "label": "الخطوة 03",
+                "name": "step_3",
+                "type": "group",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_lms_step_3_title",
+                        "label": "العنوان",
+                        "name": "title",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_lms_step_3_description",
+                        "label": "الوصف",
+                        "name": "description",
+                        "type": "textarea",
+                        "rows": 3
+                    }
+                ]
+            },
+            {
+                "key": "field_lms_banner_title",
+                "label": "عنوان البانر",
+                "name": "banner_title",
+                "type": "text",
+                "default_value": "جهة واحدة، عقد واحد، تشغيل مباشر"
+            },
+            {
+                "key": "field_lms_banner_description",
+                "label": "وصف البانر",
+                "name": "banner_description",
+                "type": "textarea",
+                "rows": 2
+            },
+            {
+                "key": "field_lms_banner_button",
+                "label": "زر البانر",
+                "name": "banner_button",
+                "type": "group",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_lms_banner_button_text",
+                        "label": "نص الزر",
+                        "name": "text",
+                        "type": "text",
+                        "default_value": "احجز وحدتك الآن"
+                    },
+                    {
+                        "key": "field_lms_banner_button_href",
+                        "label": "رابط الزر",
+                        "name": "href",
+                        "type": "text",
+                        "default_value": "/projects"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [],
+        "active": true,
+        "show_in_rest": 1
+    }
+]
