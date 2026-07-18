@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home_page/HeroSection";
+import LeasingModelSection from "@/components/home_page/LeasingModelSection";
 import OurPartnersSection from "@/components/home_page/OurPartnersSection";
 import OurPojectsSection from "@/components/home_page/OurPojectsSection";
 import OurServicesSection from "@/components/home_page/OurServicesSection";
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <SummaryValuesSection />
       <OurServicesSection />
+      <LeasingModelSection />
       <WhyUsSection />
       <StartInvestmentSection />
       <OurPartnersSection />
