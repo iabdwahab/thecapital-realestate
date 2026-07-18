@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { NewsGallery as NewsGalleryData } from "@/types/news";
+import NewsVideoPlayer from "./NewsVideoPlayer";
 
 interface GalleryItem {
   type: "image" | "video";
@@ -40,6 +41,7 @@ export default function NewsGallery({ data }: Props) {
         modules={[Navigation, Pagination]}
         spaceBetween={16}
         slidesPerView={1}
+        loop={items.length > 1}
         navigation={items.length > 1}
         pagination={items.length > 1 ? { clickable: true } : false}
         breakpoints={{
@@ -58,10 +60,9 @@ export default function NewsGallery({ data }: Props) {
                 className="border-secondary-light h-64 w-full rounded-xl border object-cover"
               />
             ) : (
-              <video
+              <NewsVideoPlayer
                 src={item.src}
-                controls
-                className="border-secondary-light h-64 w-full rounded-xl border object-cover"
+                className="border-secondary-light h-64 w-full rounded-xl border"
               />
             )}
           </SwiperSlide>
