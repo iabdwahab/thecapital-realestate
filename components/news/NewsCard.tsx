@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import GradientCardBorder from "../global/GradientCardBorder";
 import { NewsData } from "@/types/news";
 import { formatDateToArabic, timeFromNowInArabic } from "@/functions/dateManipulation";
@@ -9,11 +10,11 @@ interface Props {
 }
 
 export default function NewsCard({ data, className }: Props) {
-  const { image, title, short_description, date } = data;
+  const { image, title, short_description, date, slug } = data;
 
   return (
-    <article
-      tabIndex={0}
+    <Link
+      href={`/news/${slug}`}
       className={`${className} rounded-card-radius group bg-background duration-hover-normal relative z-10 flex flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5`}
     >
       {/* This will be vWisible when hovering */}
@@ -102,6 +103,6 @@ export default function NewsCard({ data, className }: Props) {
           </div>
         </div> */}
       </div>
-    </article>
+    </Link>
   );
 }
