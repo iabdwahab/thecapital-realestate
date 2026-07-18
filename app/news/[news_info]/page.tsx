@@ -14,7 +14,7 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   const newsList = await getNews();
 
-  return newsList.filter((news) => Boolean(news.slug)).map((news) => ({ news_info: news.slug }));
+  return newsList.map((news) => ({ news_info: news.id.toString() }));
 }
 
 export async function generateMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { news_info } = await params;
   const newsList = await getNews();
-  const news = newsList.find((item) => item.slug === news_info);
+  const news = newsList.find((item) => item.id.toString() === news_info);
 
   if (!news) return {};
 
@@ -42,11 +42,11 @@ export async function generateMetadata({
 export default async function NewsInfoPage({ params }: { params: Promise<{ news_info: string }> }) {
   const { news_info } = await params;
   const newsList = await getNews();
-  const news = newsList.find((item) => item.slug === news_info);
+  const news = newsList.find((item) => item.id.toString() === news_info);
 
   if (!news) notFound();
 
-  const relatedNews = newsList.filter((item) => item.slug !== news.slug).slice(0, 3);
+  const relatedNews = newsList.filter((item) => item.id !== news.id).slice(0, 3);
 
   return (
     <>

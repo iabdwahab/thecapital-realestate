@@ -13,7 +13,6 @@ export interface NewsFetchedObject {
   id: number;
   date: string;
   acf: {
-    slug: string;
     image: string | false;
     title: string;
     short_description: string;
@@ -24,7 +23,6 @@ export interface NewsFetchedObject {
 
 export interface NewsData {
   id: number;
-  slug: string;
   image: string | false;
   title: string;
   short_description: string;

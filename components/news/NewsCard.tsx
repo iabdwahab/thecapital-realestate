@@ -10,11 +10,11 @@ interface Props {
 }
 
 export default function NewsCard({ data, className }: Props) {
-  const { image, title, short_description, date, slug } = data;
+  const { id, image, title, short_description, date } = data;
 
   return (
     <Link
-      href={`/news/${slug}`}
+      href={`/news/${id}`}
       className={`${className} rounded-card-radius group bg-background duration-hover-normal relative z-10 flex flex-col shadow-sm transition hover:-translate-y-2.5 max-lg:focus:-translate-y-2.5`}
     >
       {/* This will be vWisible when hovering */}
