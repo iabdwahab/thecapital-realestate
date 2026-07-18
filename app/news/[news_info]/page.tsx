@@ -5,6 +5,7 @@ import { getNews } from "@/utils/getNews";
 import { formatDateToArabic } from "@/functions/dateManipulation";
 import BlurryCirlce from "@/components/global/BlurryCirlce";
 import NewsCard from "@/components/news/NewsCard";
+import NewsGallery from "@/components/news/NewsGallery";
 import ButtonPrimaryArrow from "@/components/global/ButtonPrimaryArrow";
 import NewsletterSubscribtionSection from "@/components/newsletter/NewsletterSubscribtionSection";
 
@@ -75,6 +76,8 @@ export default async function NewsInfoPage({ params }: { params: Promise<{ news_
               className="rounded-card-radius border-secondary-light mb-10 max-h-100 w-full border object-cover object-center"
             />
           )}
+
+          <NewsGallery data={news.news_gallery} />
 
           <div
             dangerouslySetInnerHTML={{ __html: news.news_info || news.short_description }}
