@@ -3,9 +3,9 @@ import SummarySection from "./SummarySection";
 
 export default function SummaryValuesSection() {
   return (
-    <section className="py-section-y-padding via-background to-background overflow-hidden from-[#5D819B] md:bg-linear-to-br">
+    <section className="py-section-y-padding via-background to-background from-background overflow-hidden md:bg-linear-to-br">
       <div className="container flex flex-col gap-6">
-        <SummarySection />
+        {/* <SummarySection /> */}
         <OurValues />
       </div>
     </section>

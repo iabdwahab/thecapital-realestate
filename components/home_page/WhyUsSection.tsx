@@ -10,7 +10,10 @@ export default async function WhyUsSection() {
   const whyUsReasons = await getWhyUsReasons();
 
   return (
-    <section className="py-section-y-padding relative">
+    <section className="py-section-y-padding relative z-20">
+      <span className="from-background absolute top-0 left-0 z-10 h-14 w-full bg-linear-to-b to-transparent"></span>
+      <span className="from-background absolute bottom-0 left-0 z-10 h-14 w-full bg-linear-to-t to-transparent"></span>
+
       <Image
         src="/shapes/waves-top.png"
         alt="Background Image"
